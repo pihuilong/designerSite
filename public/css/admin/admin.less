@@ -1,0 +1,319 @@
+@bgColor:#558fc5;
+@baseColor:#01afec;
+@bgDarkGrey:#707070;
+@bgViewWindow:#eeefef;
+
+//清除浮动
+.clearfix(){
+    &:after{
+        content:"";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+//动画
+
+
+body{
+    background: linear-gradient(to bottom,@bgColor,#b3c7db);
+    background-color: @bgColor;
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.admin{
+    width: 1200px;
+    background-color: @bgDarkGrey;
+    margin: 30px auto;
+    border: 1px solid grey;
+    box-shadow: 0 0 8px darkolivegreen;
+    .clearfix();
+    box-sizing: content-box;  //主要针对Bootstrap将此属性修改为“border-box”
+}
+
+//adminleft
+.admin-left{
+    float: left;
+    width: 200px;
+    height: auto;
+    & > .banner{
+        background-color: @baseColor;
+        height: 70px;
+        width: 100%;
+        display: table;
+        & > a {
+            display: table-cell;
+            vertical-align: middle;
+            text-decoration: none;
+            color: white;
+            &:hover{
+                & > img{
+                    transform: scale(1.5);
+                }
+            }
+            & > span{
+                width: 50px;
+                display: inline-block;
+            }
+        }
+        & img{
+            width: 30px;
+            margin: 0 8px 0 16px;
+            transition: all 0.5s ease;
+        }
+    }
+    & > .nav{
+        width: 100%;
+        min-height: 400px;
+        & > ul{
+            list-style: none;
+            padding: 0;
+            & > li{
+                margin-top: 12px;
+                padding: 8px 0 8px 0;
+                & > a {
+                    display: inline-block;
+                    text-align: center;
+                    width: 100%;                    
+                    color: #bbbbbb;
+                    text-decoration: none;
+                    font-size: 16px;
+                }
+                &:hover{
+                    background-color: #333;
+                    & > a{
+                        color: #DDDDDD;
+                    }
+                    & > .second-nav{
+                        height: 60px;
+                    }
+                }
+                & > .second-nav{
+                    height: 0;
+                    overflow: hidden;
+                    list-style: none;
+                    padding: 0;
+                    transition: all 0.3s linear;
+                    & > li{
+                        padding-top: 8px;
+                        & > a{
+                           color: white;
+                           text-align: center; 
+                           font-size: 14px;
+                           display: block;
+                           text-decoration: none;
+                        }
+                        &:hover{
+                            background-color: @bgDarkGrey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//adminright
+.admin-right{
+    float: left;
+    width: 1000px;
+    
+    & > .right-top{
+        height: 70px;
+        width: 100%;
+        border-bottom: 1px solid #e5e5e5;
+        background-color: #FFFFFF;
+        display: table;
+        & > .icons{
+            position: relative;
+            display: table-cell;
+            vertical-align: middle; 
+            & > i{
+                margin-left: 25px;
+                color: #BBBBBB;
+                transform: scale(1.5);
+                -webkit-transform: scale(1.5);
+                -moz-transform: scale(1.5);
+                &:hover{
+                    color: @baseColor;
+                    cursor: pointer;
+                }
+            }
+            & > .search{
+                position: absolute;
+                right: 16px;
+                top: 30px;
+            }           
+        }
+    }
+    
+    & > .right-info{
+        height: 150px;
+        width: 100%;
+        border-bottom: 1px solid #e5e5e5;
+        background-color: #FFFFFF;
+        padding: 20px 40px 20px 140px;
+        & > .brief-info{
+            position: relative;
+            float: left;
+            & > img{
+                width: 60px;
+                position: absolute;
+                left: -80px;
+            }
+            & > .text-infomation{
+                display: inline-block;
+                & > .name{
+                    font-size: 20px;
+                    font-weight: bolder;
+                }
+                & > .job{
+                    color: grey;
+                }
+                & > .experience{
+                    color: #CCCCCC;
+                    margin-top: 6px;
+                }
+            }
+            
+            & > .stars{
+                display: inline-block;
+                vertical-align: top;
+                margin: 5px 0 0 30px;
+                & > i{
+                    color: orange;
+                }                
+            }
+        }
+        & > .operation{
+            float: right;
+            & > a{
+                margin-right: 30px;
+                margin-top: 20px;
+                text-decoration: none;
+                transform: scale(2);
+                -webkit-transform: scale(2);
+                -moz-transform: scale(2);
+            }
+        }
+    }
+    
+    & > .view-window{
+        background-color: @bgViewWindow;
+        min-height: 500px;
+    }
+    
+    .index-change{
+        text-align: center;
+        padding-top: 30px;
+        & > form{
+           & > .form-group{
+               & > .lbs{
+                   display: inline-block;
+                   width: 90px;
+                   text-align: center;
+               }
+                &>textarea{
+                    vertical-align: middle;
+                }
+            } 
+        }
+    }
+    
+    .index-show{
+        width: 600px;
+        padding: 40px 0;
+        margin: 0 auto;
+        & > p{
+            margin-bottom: 30px;
+        }
+        & > h4{
+            font-weight: bolder;
+            color: @bgColor;
+        }
+    }
+    
+    .resume-show{
+        padding: 25px 0;
+        width: 600px;
+        margin: 0 auto;
+        & > .resume-choose{
+            text-align: center;
+            padding-bottom: 40px;
+            & > select{
+                width: 100px;
+            }
+            & > span{
+                font-size: 12px;
+                padding-left: 10px;
+                color: red;
+                & > strong{
+                    color: #666;
+                }
+            }
+        }
+        & > .summary{
+            font-size: 14px;
+            & > h1{
+                font-weight: bold;
+            }
+            & > .ver-line{
+                color: @bgColor;
+                padding: 0 5px;
+            }
+            & > p{
+                margin: 5px 0 6px 0;
+            }
+        }
+        
+        & > .details{
+            & > dt{
+                & > h5{
+                    font-size: 18px;
+                    color: @bgColor;
+                    font-weight: bolder;
+                    padding: 8px 0;
+                }
+            }
+            & > .job-summary{
+                & > ul{
+                    list-style: none;
+                }
+            }
+        }
+    }
+    
+    .resume-change{
+        width: 700px;
+        padding: 25px 0;
+        margin: 0 auto;
+        & > form{
+            & > table{
+                border-collapse: separate;
+                border-spacing: 0 15px;
+                & tr{
+                    & > th{
+                        position: relative;
+                        & > span{
+                            position: absolute;
+                            color: red;
+                            left: -15px;
+                            font-weight: bolder;
+                        }
+                    }
+                    & > td{
+                        & > input[type="text"]{
+                            width: 200px;
+                        }
+                    }
+                }
+            }
+            & > input[type="submit"]{
+                position: relative;
+                left: 50%;
+            }
+        }
+            
+    }
+}

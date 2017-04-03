@@ -1,0 +1,275 @@
+body {
+  background: linear-gradient(to bottom, #558fc5, #b3c7db);
+  background-color: #558fc5;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.admin {
+  width: 1200px;
+  background-color: #707070;
+  margin: 30px auto;
+  border: 1px solid grey;
+  box-shadow: 0 0 8px darkolivegreen;
+  box-sizing: content-box;
+}
+.admin:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.admin-left {
+  float: left;
+  width: 200px;
+  height: auto;
+}
+.admin-left > .banner {
+  background-color: #01afec;
+  height: 70px;
+  width: 100%;
+  display: table;
+}
+.admin-left > .banner > a {
+  display: table-cell;
+  vertical-align: middle;
+  text-decoration: none;
+  color: white;
+}
+.admin-left > .banner > a:hover > img {
+  transform: scale(1.5);
+}
+.admin-left > .banner > a > span {
+  width: 50px;
+  display: inline-block;
+}
+.admin-left > .banner img {
+  width: 30px;
+  margin: 0 8px 0 16px;
+  transition: all 0.5s ease;
+}
+.admin-left > .nav {
+  width: 100%;
+  min-height: 400px;
+}
+.admin-left > .nav > ul {
+  list-style: none;
+  padding: 0;
+}
+.admin-left > .nav > ul > li {
+  margin-top: 12px;
+  padding: 8px 0 8px 0;
+}
+.admin-left > .nav > ul > li > a {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  color: #bbbbbb;
+  text-decoration: none;
+  font-size: 16px;
+}
+.admin-left > .nav > ul > li:hover {
+  background-color: #333;
+}
+.admin-left > .nav > ul > li:hover > a {
+  color: #DDDDDD;
+}
+.admin-left > .nav > ul > li:hover > .second-nav {
+  height: 60px;
+}
+.admin-left > .nav > ul > li > .second-nav {
+  height: 0;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  transition: all 0.3s linear;
+}
+.admin-left > .nav > ul > li > .second-nav > li {
+  padding-top: 8px;
+}
+.admin-left > .nav > ul > li > .second-nav > li > a {
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  display: block;
+  text-decoration: none;
+}
+.admin-left > .nav > ul > li > .second-nav > li:hover {
+  background-color: #707070;
+}
+.admin-right {
+  float: left;
+  width: 1000px;
+}
+.admin-right > .right-top {
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #FFFFFF;
+  display: table;
+}
+.admin-right > .right-top > .icons {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+.admin-right > .right-top > .icons > i {
+  margin-left: 25px;
+  color: #BBBBBB;
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+}
+.admin-right > .right-top > .icons > i:hover {
+  color: #01afec;
+  cursor: pointer;
+}
+.admin-right > .right-top > .icons > .search {
+  position: absolute;
+  right: 16px;
+  top: 30px;
+}
+.admin-right > .right-info {
+  height: 150px;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #FFFFFF;
+  padding: 20px 40px 20px 140px;
+}
+.admin-right > .right-info > .brief-info {
+  position: relative;
+  float: left;
+}
+.admin-right > .right-info > .brief-info > img {
+  width: 60px;
+  position: absolute;
+  left: -80px;
+}
+.admin-right > .right-info > .brief-info > .text-infomation {
+  display: inline-block;
+}
+.admin-right > .right-info > .brief-info > .text-infomation > .name {
+  font-size: 20px;
+  font-weight: bolder;
+}
+.admin-right > .right-info > .brief-info > .text-infomation > .job {
+  color: grey;
+}
+.admin-right > .right-info > .brief-info > .text-infomation > .experience {
+  color: #CCCCCC;
+  margin-top: 6px;
+}
+.admin-right > .right-info > .brief-info > .stars {
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px 0 0 30px;
+}
+.admin-right > .right-info > .brief-info > .stars > i {
+  color: orange;
+}
+.admin-right > .right-info > .operation {
+  float: right;
+}
+.admin-right > .right-info > .operation > a {
+  margin-right: 30px;
+  margin-top: 20px;
+  text-decoration: none;
+  transform: scale(2);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+}
+.admin-right > .view-window {
+  background-color: #eeefef;
+  min-height: 500px;
+}
+.admin-right .index-change {
+  text-align: center;
+  padding-top: 30px;
+}
+.admin-right .index-change > form > .form-group > .lbs {
+  display: inline-block;
+  width: 90px;
+  text-align: center;
+}
+.admin-right .index-change > form > .form-group > textarea {
+  vertical-align: middle;
+}
+.admin-right .index-show {
+  width: 600px;
+  padding: 40px 0;
+  margin: 0 auto;
+}
+.admin-right .index-show > p {
+  margin-bottom: 30px;
+}
+.admin-right .index-show > h4 {
+  font-weight: bolder;
+  color: #558fc5;
+}
+.admin-right .resume-show {
+  padding: 25px 0;
+  width: 600px;
+  margin: 0 auto;
+}
+.admin-right .resume-show > .resume-choose {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.admin-right .resume-show > .resume-choose > select {
+  width: 100px;
+}
+.admin-right .resume-show > .resume-choose > span {
+  font-size: 12px;
+  padding-left: 10px;
+  color: red;
+}
+.admin-right .resume-show > .resume-choose > span > strong {
+  color: #666;
+}
+.admin-right .resume-show > .summary {
+  font-size: 14px;
+}
+.admin-right .resume-show > .summary > h1 {
+  font-weight: bold;
+}
+.admin-right .resume-show > .summary > .ver-line {
+  color: #558fc5;
+  padding: 0 5px;
+}
+.admin-right .resume-show > .summary > p {
+  margin: 5px 0 6px 0;
+}
+.admin-right .resume-show > .details > dt > h5 {
+  font-size: 18px;
+  color: #558fc5;
+  font-weight: bolder;
+  padding: 8px 0;
+}
+.admin-right .resume-show > .details > .job-summary > ul {
+  list-style: none;
+}
+.admin-right .resume-change {
+  width: 700px;
+  padding: 25px 0;
+  margin: 0 auto;
+}
+.admin-right .resume-change > form > table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+.admin-right .resume-change > form > table tr > th {
+  position: relative;
+}
+.admin-right .resume-change > form > table tr > th > span {
+  position: absolute;
+  color: red;
+  left: -15px;
+  font-weight: bolder;
+}
+.admin-right .resume-change > form > table tr > td > input[type="text"] {
+  width: 200px;
+}
+.admin-right .resume-change > form > input[type="submit"] {
+  position: relative;
+  left: 50%;
+}
+/*# sourceMappingURL=admin.css.map */

@@ -1,0 +1,29 @@
+@bgColor:#558fc5;
+@baseColor:#01afec;
+@bgDarkGrey:#707070;
+@bgViewWindow:#eeefef;
+
+body{
+    background: linear-gradient(to right,@bgColor,#b3c7db);
+    background-color: @bgColor;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 500px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.form-signin{
+    width: 450px;
+    margin: 0 auto;
+    color: white;
+    & .remember{
+        margin-bottom: 10px;
+        &>input{
+            width: 18px;
+            height: 18px;
+            background-color: white;
+            vertical-align: top;
+        }
+    }
+}
+

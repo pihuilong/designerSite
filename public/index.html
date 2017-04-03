@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>Bonnie的个人网站</title>
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- for-mobile-apps -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Bonnie, designer, UI,设计师" />
+		<script type="application/x-javascript"> 
+			addEventListener("load", function() { 
+				setTimeout(hideURLbar, 0); 
+			}, false);
+//			手机打开页面后收起地址栏 hideURLbar  
+			function hideURLbar(){ 
+				window.scrollTo(0,1);
+			} 
+		</script>
+	<!-- //for-mobile-apps -->	
+	<!-- js -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="js/modernizr.custom.97074.js"></script>
+	<!-- js -->
+	<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				//设置点击导航项后界面定位到指定位置（有动画效果）
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+	<!-- start-smoth-scrolling -->
+</head>
+<body>
+<!-- top -->
+<div class="topnav">
+	<a href="blog.html">blog</a>
+	<div class="clearfix"></div>
+</div>
+<!-- //top-->
+<!-- banner -->
+<div id="home" class="banner">
+	<div class="container">
+		<div class="banner-grids">
+			<div class="col-md-4 navigation">
+				<div class="nav-left">
+					<div class="grid__item color-4">
+						<a class="link link--kumya" href="#home"><span data-letters="Bonnie">Bonnie</span></a>
+					</div>
+				</div>
+				<div class="nav-right">
+						<span class="menu"><img src="images/menu.png" alt="" /></span>
+							<nav class="cl-effect-1">
+								<ul class="nav1">
+									<li><a class="scroll" href="#home">主页</a></li>
+									<li><a class="scroll" href="#about">关于我</a></li>
+									<li><a class="scroll" href="#portfolio">作品展示</a></li>
+									<li><a class="scroll" href="#services">服务</a></li>
+									<li><a class="scroll" href="#contact">联系我</a></li>
+								</ul>
+							</nav>
+							<!-- script for menu -->
+							<script> 
+								$( "span.menu" ).click(function() {
+								$( "ul.nav1" ).slideToggle( 300, function() {
+								 // Animation complete.
+								});
+								});
+							</script>
+							<!-- //script for menu -->
+
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="col-md-8 banner-image text-center">
+				<img src="images/banner.png" alt=""/>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- //banner -->
+<!-- about -->
+<div id="about" class="about">
+	<div class="container">
+		<div class="about-info">
+				<h3>关于我</h3>
+				<h4>我是谁&我为什么要从事设计</h4>
+				<p>我是一名热爱设计的设计师，喜欢一切美的事物，
+					也觉得一切事物都可以被设计得更好让人有更好的感受，,这也是我的设计核心。
+					很多企业的公司、APP、产品有时候不是不够好，而是设计上没达到受众的要求而被忽略，
+					这样往往很可惜，希望我的设计能为这种现象贡献出绵薄之力。</p>
+		</div>
+		<div class="about-grids">
+		   	<div class="col-md-6 about-grid">
+		   		<h4>我的经验</h4>
+		   		<p>曾为多家公司设计logo，多次接平面设计任务，如传单、喷画、画册、名片等。</p>
+		   	</div>
+		   	<div class="col-md-6 about-grid">
+		   		<h4>我的愿景</h4>
+		   		<p>日本、欧美等国家的设计目前比较成熟，我国的设计刚刚起步没多久，
+		   			有非常大的潜力与市场，相信经过一代人的努力，
+		   			我国的设计会紧随经济的发展达到一个新的高度，我愿成为耕耘的其中一名。</p>
+		   	</div>
+		   	<div class="clearfix"> </div>
+		</div>  
+		<a class="more" href="/resume.html" target="_blank">查看更多</a>
+	</div>
+</div>
+<!-- //about -->
+<!-- my skills -->
+	<div class="our-skills">
+		<div class="container">
+			<div class="skill-info">
+				<h2>我的技能</h2>
+			</div>
+			<div class="skill-grids">
+					<div class="col-md-3 skills-grid text-center">
+						<div class="circle" id="circles-1"></div>
+						<p>网页设计</p>
+					</div>
+					<div class="col-md-3 skills-grid text-center">
+						<div class="circle" id="circles-2"></div>
+						<p>HTML/CSS</p>
+					</div>
+					<div class="col-md-3 skills-grid text-center">
+						<div class="circle" id="circles-3"></div>
+						<p>平面设计</p>
+					</div>
+					<div class="col-md-3 skills-grid text-center">
+						<div class="circle" id="circles-4"></div>
+						<p>UI/UX</p>
+					</div>
+					<div class="clearfix"> </div>
+				 <script type="text/javascript" src="js/circles.js"></script>
+					         <script>
+								var colors = [
+										['#787878', '#01afec'], ['#787878', '#01afec'], ['#787878', '#01afec'], ['#787878', '#01afec']
+									];
+								var child1 = document.getElementById('circles-1')
+								Circles.create({
+									id:         child1.id,
+									percentage: 85,
+									radius:     80,
+									width:      10,
+									number:   	85,
+									text:       '%',
+									colors:     colors[0]
+								});
+								$(child1.parentElement).bind("mouseenter",function(){
+									Circles.create({
+										id:         child1.id,
+										percentage: 85,
+										radius:     80,
+										width:      10,
+										number:   	85,
+										text:       '%',
+										colors:     colors[0]
+									});
+								});
+								for (var i = 2; i < 5; i++) {
+									var child = document.getElementById('circles-' + i),
+										percentage = 50 + (i * 10);
+									Circles.create({
+										id:         child.id,
+										percentage: percentage,
+										radius:     80,
+										width:      10,
+										number:   	percentage,
+										text:       '%',
+										colors:     colors[i - 1]
+									});
+									!function(child,percentage){
+										$(child.parentNode).bind("mouseenter",function(){
+											Circles.create({
+												id:         child.id,
+												percentage: percentage,
+												radius:     80,
+												width:      10,
+												number:   	percentage,
+												text:       '%',
+												colors:     colors[0]
+											});
+										});
+									}(child,percentage);
+								}
+						
+				</script>
+			</div>
+			<a class="more" href="/resume.html" target="_blank">查看更多</a>
+		</div>	
+	</div>
+<!-- //my skills -->
+<div id="portfolio" class="gallery">
+		<div class="container">
+			<script src="js/jquery.chocolat.js"></script>
+			<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+			<!--light-box-files -->
+			<script type="text/javascript" charset="utf-8">
+			$(function() {
+				$('.gallery section a').Chocolat(
+					{
+						fadeInOverlayduration:300,
+						fadeInImageduration:200,
+						fadeOutImageduration:300,
+					}
+				);
+			});
+			</script>
+			<h3>作品展示</h3>
+			<section>
+				<ul id="da-thumbs" class="da-thumbs">
+					<li>
+						<a href="images/a1.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img src="images/a1.jpg" alt="" />
+							<div>
+								<h5>VIEW</h5>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="images/a2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img src="images/a2.jpg" alt="" />
+							<div>
+								<h5>VIEW</h5>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="images/a3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img src="images/a3.jpg" alt="" />
+							<div>
+								<h5>VIEW</h5>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="images/a4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img src="images/a4.jpg" alt="" />
+							<div>
+								<h5>VIEW</h5>
+							</div>
+						</a>
+					</li>
+					<li>	
+						<a href="images/a5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img src="images/a5.jpg" alt="" />
+							<div>
+								<h5>VIEW</h5>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="images/a6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img src="images/a6.jpg" alt="" />
+							<div>
+								<h5>VIEW</h5>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="images/a7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img src="images/a7.jpg" alt="" />
+							<div>
+								<h5>VIEW</h5>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="images/a1.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img src="images/a1.jpg" alt="" />
+							<div>
+								<h5>VIEW</h5>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="images/a2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+							<img src="images/a2.jpg" alt="" />
+							<div>
+								<h5>VIEW</h5>
+							</div>
+						</a>
+					</li>
+					<div class="clearfix"> </div>
+				</ul>
+			</section>
+				<script type="text/javascript" src="js/jquery.hoverdir.js"></script>	
+				<script type="text/javascript">
+					$(function() {
+						$(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+					});
+				</script>
+			<a class="more" href="/mywork.html" target="_blank">查看更多</a>
+        </div>	
+</div>
+<!--//gallery-->
+<!--services-->
+<div id="services" class="services">
+	<div class="container">
+		<div class="ser-head">
+			<h3>特色服务</h3>
+		</div>
+		<div class="wel-grids">
+			<div class="col-md-4 wel-grid btm-gre text-center">
+				<div class="btm-clr">
+					<figure class="icon">
+						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					</figure>
+					<h3>UI设计</h3>
+					<p> 各种图标绘制、手机主题设计、APP实战项目、
+						多媒体终端界面设计、智能穿戴设备界面设计、用户体验设计与AE动效设计等</p>
+				</div>
+			</div>
+			<div class="col-md-4 wel-grid btm-gre text-center">
+				<div class="btm-clr">
+					<figure class="icon">
+						<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+					</figure>
+					<h3>电商设计</h3>
+					<p> 从设计构图、创意思路、表现手法、效果打造、细节把握等多个方面全面设计电商广告，
+						完成店铺装修、Banner制作、商业海报、H5页面等</p>
+				</div>
+			</div>
+			<div class="col-md-4 wel-grid btm-gre text-center">
+				<div class="btm-clr">
+					<figure class="icon">
+						<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+					</figure>
+					<h3>网页设计</h3>
+					<p> Web端网页界面设计，根据不同企业的不同需求做出网页的个性化设计，
+						包括网页图标、艺术字、Banner图等并融入用户体验设计</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+			</div>
+			<div class="col-md-3 wel-grid btm-gre text-center">
+				<div class="btm-clr">
+					<figure class="icon">
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+					</figure>
+					<h3>平面设计</h3>
+					<p> VIP卡设计、海报设计、户外广告设计、DM单页设计、
+						折页设计、画册设计、手提袋设计、VI设计及展架设计等</p>
+				</div>
+			</div>
+			<div class="col-md-3 wel-grid btm-gre text-center">
+				<div class="btm-clr">
+					<figure class="icon">
+						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+					</figure>
+					<h3>HTML/CSS/JS</h3>
+					<p> 网页基本前端的实现，包括规范制作完成符合W3C标准的HTML页面，并解决适配兼容性问题；
+						掌握JS基础流程控制及利用JQ实现常用特效；
+						利用html5与css3制作适应不同终端的H5个性特效网站</p>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<a class="more" href="/business.html" target="_blank">查看更多</a>
+	</div>
+</div>
+<!--//services-->
+<!--news-->
+<!--<div class="news">
+	<div class="container">
+		<h3>NEWSLETTER SIGN UP</h3>
+		<p> Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing. </p>
+		<div class="na-m">
+			<div class="name">
+				<form>
+					<input type="text" placeholder="Enter email id" required="">
+				</form>
+			</div>
+			<div class="button">
+				<form>
+					<input type="submit" value="Subscribe">
+				</form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>-->
+<!--//news-->
+<!-- get-in -->
+<div id="contact" class="get-in-touch">
+	<div class="container">
+		<div class="get-info text-center">
+			<h3>联系我</h3>
+			<h4><i>邮箱：bonnielee@qq.com</i></h4>
+			<p>地址：广东省江门市蓬江区五邑大学</p>
+		</div>
+	</div>
+	<div class="map">
+		<iframe src="/baidu_map.html" frameborder="0" style="border:0;margin: 0 auto;width: 700px;position: relative;left: 50%;margin-left: -350px;" scrolling="no"></iframe>
+	</div>
+</div>
+<!-- //get-in -->
+<!-- contact-us -->
+<!--<div class="contact-us">
+	<div class="container">
+		<div class="contact-grids">
+			<div class="col-md-4 contact-grid text-center">
+				<div class="point-icon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></div>
+				<p>广东省江门市蓬江区五邑大学</p>
+			</div>
+			<div class="col-md-4 contact-grid text-center">
+				<div class="point-icon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
+				<p><a href="mailto:info@example.com">rudhisasmito@gmail.com</a></p>
+			</div>
+			<div class="col-md-4 contact-grid text-center">
+				<div class="point-icon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></div>
+				<p>+613 0000 0000</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="contact-info">
+			<form>
+				<input type="text" placeholder="Your Name" required>
+				<input type="text" placeholder="Your E-Mail" required>
+				<input type="text" placeholder="Subject" required>
+				<textarea placeholder="Your Message" required></textarea>
+				<input type="submit" value="SEND MESSAGE">
+			</form>
+		</div>
+	</div>
+</div>-->
+<!-- //contact-us -->
+<!-- footer -->
+<div class="copy-right">
+	<div class="container">
+		<p> &copy; 2017 bonnielee.com. All Rights Reserved | Design by  Bonnie & Hiram</p>
+	</div>
+</div>
+<!-- footer -->
+<!-- smooth scrolling -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+		/*
+			var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+			};
+		*/								
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+  background: linear-gradient(to right, #558fc5, #b3c7db);
+  background-color: #558fc5;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  min-height: 500px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.form-signin {
+  width: 450px;
+  margin: 0 auto;
+  color: white;
+}
+.form-signin .remember {
+  margin-bottom: 10px;
+}
+.form-signin .remember > input {
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  vertical-align: top;
+}
+/*# sourceMappingURL=admin_login.css.map */

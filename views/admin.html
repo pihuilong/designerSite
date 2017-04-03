@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>后台管理</title>
+		<link rel="stylesheet" type="text/css" href="/css/admin/admin.css" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="bookmark" href="/favicon.ico" />
+		<script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/checkstr.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/router.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="admin">
+			<!-- adminleft -->
+			<div class="admin-left">
+				<div class="banner">
+					<a href="/admin/">
+						<img src="/images/banner.png" />
+						<span><%=admin.email%></span>
+					</a>
+				</div>
+
+				<div class="nav">
+					<ul>
+						<li>
+							<a href="#/indexshow">主页信息</a>
+							<ul class="second-nav">
+								<li>
+									<a href="#/indexshow">查看</a>
+								</li>
+								<li>
+									<a href="#/indexchange">修改</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#/resumeshow">个人简历</a>
+							<ul class="second-nav">
+								<li>
+									<a href="#/resumeshow">查看</a>
+								</li>
+								<li>
+									<a href="#/resumechange">修改</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#/myworkshow">个人作品</a>
+							<ul class="second-nav">
+								<li>
+									<a href="#/myworkshow">查看</a>
+								</li>
+								<li>
+									<a href="#/myworkchange">修改</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#/businessshow">服务信息</a>
+							<ul class="second-nav">
+								<li>
+									<a href="#/businessshow">查看</a>
+								</li>
+								<li>
+									<a href="#/businesschange">修改</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#/ordershow">订单管理</a>
+							<ul class="second-nav">
+								<li>
+									<a href="#/ordershow">查看</a>
+								</li>
+								<li>
+									<a href="#/orderchange">修改</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //adminleft -->
+
+			<!-- adminright -->
+			<div class="admin-right">
+				<div class="right-top">
+					<div class="icons">
+						<i class="glyphicon glyphicon-user"></i>
+						<i class="glyphicon glyphicon-comment"></i>
+						<i class="glyphicon glyphicon-off"></i>
+						<i class="glyphicon glyphicon-search search"></i>
+					</div>
+				</div>
+
+				<div class="right-info">
+					<div class="brief-info">
+						<img src="/images/banner.png" />
+						<div class="text-infomation">
+							<p class="name">
+								<%=admin.adminName%>
+							</p>
+							<span class="job">设计师 · </span>
+							<a href="#">更多</a>
+							<p class="experience"><i class="glyphicon glyphicon-calendar"></i> 3年</p>
+						</div>
+						<div class="stars">
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+						</div>
+					</div>
+					<div class="operation">
+						<a href="#" class="glyphicon glyphicon-pencil"></a>
+						<a href="#" class="glyphicon glyphicon-off"></a>
+					</div>
+				</div>
+
+				<div class="view-window" id="contents">
+					
+					<div class="resume-change">
+						<form action="" method="post">
+							<table border="0" cellspacing="0" cellpadding="0" width="100%">
+								<tr>
+									<th width="20%"><span>*</span> <font>姓名</font></th>
+									<td><input type="text" name="userName" placeholder="请填写您的真实姓名" /></td>
+								</tr>
+								<tr>
+									<th><span>*</span> <font>性别</font></th>
+									<td colspan="3">
+										<input type="radio" name="gender" value="1" checked="checked"> 男
+          								<input type="radio" name="gender" value="0"> 女
+									</td>
+								</tr>
+								<tr>
+									<th><span>*</span> <font>出生日期</font></th>
+									<td><input type="date" name="" id="" value="" /></td>
+								</tr>
+								<tr>
+									<th><span>*</span> <font>所在城市</font></th>
+									<td><input type="text" name="willSpot" placeholder="请填写您的现居地" /></td>
+								</tr>
+								<tr>
+									<th><span>*</span> <font>工作年限</font></th>
+									<td><input type="number" name="workYears" /></td>
+								</tr>
+								<tr>
+									<th><span>*</span> <font>最高学历</font></th>
+									<td>
+										<select name="education">
+											<option value="1">高中</option>
+											<option value="2">中专</option>
+											<option value="3">大专</option>
+											<option value="4" selected="selected">本科</option>
+											<option value="5">研究生</option>
+											<option value="6">硕士</option>
+											<option value="7">博士</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th><span>*</span> <font>联系电话</font></th>
+									<td><input type="text" name="tel" placeholder="请填写您的联系电话"/></td>
+								</tr>
+								<tr>
+									<th><span>*</span> <font>Email</font></th>
+									<td><input type="text" name="email" placeholder="请填写您的邮箱地址"/></td>
+								</tr>
+								
+								<tr>
+									<th><span>*</span> <font>工作性质</font></th>
+									<td>
+										<select name="jobspecification">
+											<option value="1">兼职</option>
+											<option value="2">全职</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th><span>*</span> <font>期望行业</font></th>
+									<td><input type="text" name="promisingIndustry" placeholder="请填写您期望从事的行业"/></td>
+								</tr>
+								<tr>
+									<th><span>*</span> <font>意向工作城市</font></th>
+									<td><input type="text" name="willspot" placeholder="请填写您的邮箱地址"/></td>
+								</tr>
+								<tr>
+									<th><span>*</span> <font>工作状态</font></th>
+									<td>
+										<select name="jobspecification">
+											<option value="1">已就业</option>
+											<option value="2">求职中</option>
+										</select>
+									</td>
+								</tr>
+								
+								<tr>
+									<th><font>专业技能</font></th>
+									<td>
+										<textarea name="specializeSkill" rows="5" cols="70"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th><font>工作经历</font></th>
+									<td>
+										<textarea name="workExperience" rows="5" cols="70"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th><font>培训经历</font></th>
+									<td>
+										<textarea name="trainingExperience" rows="5" cols="70"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th><font>教育经历</font></th>
+									<td>
+										<textarea name="educationExperience" rows="5" cols="70"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th><font>近日头像</font></th>
+									<td>
+										<input type="file" name="userImg" id="userImg" value="" />
+									</td>
+								</tr>
+							</table>
+							<div class="message"></div>
+							<input type="submit" value="提交"/>
+						</form>
+					</div>
+
+				</div>
+				<script src="/js/admin-router.js" type="text/javascript" charset="utf-8"></script>
+			</div>
+			<!-- //adminright -->
+		</div>
+	</body>
+
+</html>
