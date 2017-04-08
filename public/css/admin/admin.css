@@ -81,7 +81,7 @@ body {
   overflow: hidden;
   list-style: none;
   padding: 0;
-  transition: all 0.3s linear;
+  transition: height 0.3s linear;
 }
 .admin-left > .nav > ul > li > .second-nav > li {
   padding-top: 8px;
@@ -179,7 +179,12 @@ body {
 }
 .admin-right > .view-window {
   background-color: #eeefef;
-  min-height: 500px;
+  min-height: 270px;
+  padding-bottom: 30px;
+}
+.admin-right > .resume-window {
+  background-color: #eeefef;
+  min-height: 150px;
 }
 .admin-right .index-change {
   text-align: center;
@@ -206,7 +211,7 @@ body {
   color: #558fc5;
 }
 .admin-right .resume-show {
-  padding: 25px 0;
+  padding: 5px 0;
   width: 600px;
   margin: 0 auto;
 }
@@ -271,5 +276,12 @@ body {
 .admin-right .resume-change > form > input[type="submit"] {
   position: relative;
   left: 50%;
+  margin-left: -16px;
+}
+.admin-right .showResumeTitle > .resumeTitle {
+  padding: 80px 200px;
+}
+.admin-right .showResumeTitle > .resumeTitle > .btn-group {
+  margin-right: 100px;
 }
 /*# sourceMappingURL=admin.css.map */

@@ -12,7 +12,7 @@ use designerSite;
 ); 
 alter table admin add email varchar(100) not null;*/  /*添加email字段用于登录*/
 /*insert into admin values(default,"hiram","hiram1994",1,"pihuilong@qq.com");*/
-insert into admin values(default,"BonnieLee","bonnie1993",1,"1770232364@qq.com");
+/*insert into admin values(default,"BonnieLee","bonnie1993",1,"1770232364@qq.com");
 
 
 /*创建主页关于我*/
@@ -76,7 +76,8 @@ on update cascade;   /*主表更新，字表们产生连锁更新动作*/
     adminID int not null,
     resumeName varchar(30) not null,
     isShow bit not null
-);
+);*/
+/*alter table resume modify isShow char(1);
 /*定义外键以及级联操作*/
 /* alter table resume add constraint fk_resume_admin_ID
 foreign key (adminID)
@@ -101,7 +102,8 @@ on update cascade;   /*主表更新，字表们产生连锁更新动作*/
     promisingIndustry varchar(30),           //期望行业
     userImg varchar(100),					//用户头像
     workStatus varchar(20)                  //工作状态
-);
+);*/
+/*alter table resumeMain modify sex char(1);
 /*定义外键以及级联操作*/
 /* alter table resumemain add constraint fk_main_resume_ID
 foreign key (resumeID)
@@ -115,7 +117,8 @@ on update cascade;   /*主表更新，字表们产生连锁更新动作*/
     trainingExperience longtext null,
     workExperience longtext null,
     specializeSkill longtext not null
-);
+);*/
+/*alter table resumeSub modify specializeSkill longtext null;
 /*定义外键以及级联操作*/
 /* alter table resumeSub add constraint fk_sub_resume_ID
 foreign key (resumeID)

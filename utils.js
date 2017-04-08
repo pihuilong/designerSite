@@ -1,8 +1,8 @@
 'use strict';
 
+//数据库操作接口
 var mysql = require('mysql');
 Promise.promisifyAll(require("mysql/lib/Connection").prototype); //将所有MySQL中的connectionPromise化
-
 exports.getConn = () => {
     //连接数据库
     var connection = mysql.createConnection({
@@ -14,6 +14,7 @@ exports.getConn = () => {
     return connection;
 }
 
+
 //检查管理员是否登录
 exports.checklogin = (req, res, next) => {
     if (!req.session.islogin_admin) {
@@ -21,6 +22,44 @@ exports.checklogin = (req, res, next) => {
     }
     next();
 }
+
+//使用multer配置文件上传
+var multer = require("multer");
+exports.uploadFile = () => {
+    var storage = multer.diskStorage({
+        //设置上传后文件路径，uploads文件夹会自动创建。
+        destination: function(req, file, cb) {
+            cb(null, './public/uploads')
+        },
+        //给上传文件重命名，获取添加后缀名
+        filename: function(req, file, cb) {
+            var fileFormat = (file.originalname).split(".");
+            cb(null, file.fieldname + '-' + Date.now() + "." + fileFormat[fileFormat.length - 1]);
+        }
+    });
+
+    return multer({
+        storage: storage,
+        limits: {}
+    });
+}
+
+//删除文件
+exports.fileDelete = (wholePath) => {
+    fs.exists(wholePath, (exists) => {
+        if (exists) {
+            fs.unlinkAsync(wholePath).then((err) => {
+                if (err) {
+                    console.log("未能删除文件：" + wholePath + " 原因如下");
+                    console.log(err.stack);
+                } else {
+                    console.log("成功删除文件" + wholePath);
+                }
+            });
+        }
+    });
+}
+
 
 // 转换日期格式
 Date.prototype.Format = function(fmt) {

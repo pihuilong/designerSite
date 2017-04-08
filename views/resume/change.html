@@ -1,9 +1,20 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
-</html>
+<div class="showResumeTitle">
+	<div class="resumeTitle">
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary">下拉选择简历</button>
+			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    	<span class="caret"></span>
+		    	<span class="sr-only">Toggle Dropdown</span>
+		    </button>
+			<ul class="dropdown-menu">
+				<% resumes.map(function(resume){ %>
+					<li>
+						<a href="javascript:;" data-resumeID="<%= resume.resumeID %>" class="resumes"><%= resume.resumeName %></a>
+					</li>
+				<% }) %>
+			</ul>
+		</div>
+		<!--<button type="button" class="btn btn-info" id="addResume">添加简历</button>-->
+	</div>
+	<!--<div id="resumeShow"></div>-->
+</div>

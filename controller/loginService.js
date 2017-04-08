@@ -1,8 +1,8 @@
 'use strict';
 
 exports.login = (req, res, next) => {
-    let sql = "select * from admin where email = ? and adminPwd = ?";
-    util.getConn().queryAsync(sql, [req.body.username, req.body.password]).then((result) => {
+    // let sql = "select * from admin where email = ? and adminPwd = ?";
+    adminModel.admin_Login(req.body.username, req.body.password).then((result) => {
         if (result.length != 0) {
             req.session.islogin_admin = result[0];
             res.end("ok");

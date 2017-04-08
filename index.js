@@ -2,13 +2,13 @@
 
 global.Promise = require("bluebird");
 global.express = require('express');
+global.fs = Promise.promisifyAll(require("fs"));
 global.rootpath = __dirname;
 global.util = require('./utils.js');
+global.adminModel = require('./model/admin_model.js');
 var bodyParser = require('body-parser');
-var multer = require('multer');
 var session = require('express-session');
 var ejs = require('ejs'); //使用ejs渲染页面
-var upload = multer({ dest: './public/uploads/' }) // for parsing multipart/form-data
 
 var app = express();
 
@@ -53,6 +53,8 @@ app.use((err, req, res, next) => {
     // 如果是通过Ajax请求过来的，只发送状态码500；否则重定向到500错误页面
     if (req.xhr) {
         res.sendStatus(500);
+        console.log('Time: ', new Date().Format("yyyy-MM-dd hh:mm:ss"));
+        console.log(err.stack);
     } else {
         console.log(err.stack);
         res.status(302).set("Location", "/500.html").end();

@@ -1,50 +1,22 @@
-<div class="resume-show">
-	<div class="resume-choose">
-		<select name="choose">
-			<option value="">简历一</option>
-		</select>
-		<span><strong>是否展示：</strong>是</span>
-	</div>
-	<div class="summary">
-		<img width="70" height="90" align="right" class="headerImg" alt="皮慧龙" src="https://mypics.zhaopin.com/pic/2016/10/2/859E885E82464BB3B23A3F48B33D9730.jpg">
-		<h1>皮慧龙</h1>男<span class="ver-line">|</span>1994年4月生
-		<span class="ver-line">|</span> 现居住于:广东 珠海<br>1年工作经验<span class="ver-line">|</span> 学历：本科
-		<p>188****4319</p>
-		<p>
-			E-mail：
-			<a href="mailto:pihui****@qq.com">pihui****@qq.com</a>
-		</p>
-	</div>
-	<dl class="details">
-		<dt><h5>求职意向</h5></dt>
-		<dd class="job-summary">
-			<ul>
-				<li><strong>工作性质：</strong>全职</li>
-				<li><strong>期望职业：</strong>WEB前端开发、</li>
-				<li><strong>期望行业：</strong>互联网/电子商务、计算机软件、IT服务(系统/数据/维护)</li>
-				<li><strong>工作地区：</strong>深圳、珠海</li>
-				<li><strong>工作状态：</strong>未就业</li>
+<div class="showResumeTitle">
+	<div class="resumeTitle">
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary">下拉选择简历</button>
+			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    	<span class="caret"></span>
+		    	<span class="sr-only">Toggle Dropdown</span>
+		    </button>
+			<ul class="dropdown-menu">
+				<% resumes.map(function(resume){ %>
+					<li>
+						<a href="javascript:;" data-resumeID="<%= resume.resumeID %>" class="resumes"><%= resume.resumeName %></a>
+					</li>
+				<% }) %>
 			</ul>
-		</dd>
-		<dt><h5>专业技能</h5></dt>
-		<dd>
-			<p style="width:574px; overflow:hidden;word-break: break-all; word-wrap:break-word;">热爱web前端编程，对新技术具有强烈的探索精神，喜欢掌握新技术带来的成就感与变得更强的渴望。目标是<br>成为一个全栈工程师；<br>具有较好的表达能力，能把自己的思路和想法清晰地表达给团队的伙伴；<br>有强迫症，对于技术问题较真，愿意攻克技术难题，工作中遇到难题时候不解决<br>会不舒服；<br>有代码洁癖，讨厌冗余度高的代码。</p>
-		</dd>
-		<dt><h5>工作经历</h5></dt>
-		<dd>
-			<div class="work-experience">
-				<p>石敢当士大夫</p>
-			</div>
-		</dd>
-		<dt><h5>培训经历</h5></dt>
-		<dd>
-			<p>双联开关及的咖啡机</p>
-		</dd>
-		<dt><h5>教育经历</h5></dt>
-		<dd>
-			<div class="education-background">
-				<p>2013/09 -- 2017/06</p>
-				<h6>五邑大学<span class="ver-line">|</span>信息安全<span class="ver-line">|</span>本科<span class="ver-line">|</span>统招</h6></div>
-		</dd>
-	</dl>
+		</div>
+		<button type="button" class="btn btn-info" id="addResume">添加简历</button>
+	</div>
+	<div id="resumeShow">
+		
+	</div>
 </div>

@@ -94,7 +94,7 @@ body{
                     overflow: hidden;
                     list-style: none;
                     padding: 0;
-                    transition: all 0.3s linear;
+                    transition: height 0.3s linear;
                     & > li{
                         padding-top: 8px;
                         & > a{
@@ -201,7 +201,12 @@ body{
     
     & > .view-window{
         background-color: @bgViewWindow;
-        min-height: 500px;
+        min-height: 270px;
+        padding-bottom: 30px;
+    }
+    & > .resume-window{
+        background-color: @bgViewWindow;
+        min-height: 150px;
     }
     
     .index-change{
@@ -235,7 +240,7 @@ body{
     }
     
     .resume-show{
-        padding: 25px 0;
+        padding: 5px 0;
         width: 600px;
         margin: 0 auto;
         & > .resume-choose{
@@ -312,8 +317,19 @@ body{
             & > input[type="submit"]{
                 position: relative;
                 left: 50%;
+                margin-left: -16px;
             }
         }
             
+    }
+    
+    .showResumeTitle{
+//      padding: 30px 60px;
+        & > .resumeTitle{
+            padding: 80px 200px;
+            & > .btn-group{
+                margin-right: 100px;
+            }
+        }
     }
 }
