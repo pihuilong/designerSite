@@ -3,6 +3,10 @@ body {
   background-color: #558fc5;
   font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
+#customer_page {
+  background: linear-gradient(to right, lightblue, darkcyan);
+  background-color: lightblue;
+}
 .admin {
   width: 1200px;
   background-color: #707070;
@@ -174,6 +178,10 @@ body {
   font-size: 20px;
   font-weight: bolder;
 }
+.admin-right > .right-info > .brief-info > .text-infomation > .name > span {
+  font-size: 12px;
+  font-weight: 100;
+}
 .admin-right > .right-info > .brief-info > .text-infomation > .job {
   color: grey;
 }
@@ -329,8 +337,10 @@ body {
 .admin-right .base-change > .row > .title {
   font-weight: bold;
 }
-.admin-right .base-change > .row input[type="text"] {
-  width: 200px;
+.admin-right .base-change > .row input[type="text"],
+.admin-right .base-change > .row input[type="tel"],
+.admin-right .base-change > .row input[type="email"] {
+  width: 250px;
 }
 .admin-right .showResumeTitle > .resumeTitle {
   padding: 80px 200px;

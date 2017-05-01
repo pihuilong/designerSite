@@ -174,6 +174,7 @@ on update cascade;   /*主表更新，字表们产生连锁更新动作*/
 alter table customers modify vip char(1);
 alter table customers add adminID int not null;
 alter table customers drop column adminID;*/
+/*alter table customers modify sex char(1);*/
 
 /*创建订单表*/
 /* create table orders(

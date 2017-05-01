@@ -1,0 +1,61 @@
+<div class="base-change container">
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 title">
+			个人形象照
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-7">
+			<input type="file" name="portrait" id="portrait" data-oldportrait = "<%= customer.photo %>" accept="image/jpeg,image/png"/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 title">
+			姓名
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-7">
+			<input type="text" name="customerName" id="customerName" placeholder="请输入真实姓名" value="" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 title">
+			email
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-7">
+			<input type="email" name="email" id="email" placeholder="xxx@xxx.xxx" value="" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 title">
+			联系电话
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-7">
+			<input type="tel" name="tel" id="tel" placeholder="请确保电话畅通，用于与设计师联系" value="" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 title">
+			年龄
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-7">
+			<input type="number" name="age" id="age" placeholder="请填写年龄" value="" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 title">
+			性别
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-7">
+			<input type="radio" name="sex" value="1" checked="checked"/>男&nbsp;&nbsp;&nbsp;
+			<input type="radio" name="sex" value="0" />女
+		</div>
+	</div>
+	<div class="row">
+		<span class="message"></span>
+	</div>
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 title">
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-7">
+			<button class="btn-primary btn" id="confirm">确认修改</button>
+		</div>
+	</div>
+</div>

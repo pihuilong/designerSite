@@ -19,6 +19,18 @@ exports.customer_Login = (username, password) => {
         return conn.queryAsync(sql, [username, password]);
     });
 }
+exports.customer_SEL = (customerID) => {
+    let sql = "select * from customers where customerID = ?";
+    return Promise.using(util.getConn(), function(conn) {
+        return conn.queryAsync(sql, [customerID]);
+    });
+}
+exports.customer_UPD = (email, customerName, sex, tel, age, photo, customerID) => {
+    let sql = "update customers set email=?,customerName=?,sex=?,tel=?,age=?,photo=? where customerID=?";
+    return Promise.using(util.getConn(), function(conn) {
+        return conn.queryAsync(sql, [email, customerName, sex, tel, age, photo, customerID]);
+    });
+}
 
 //Table orders
 exports.orders_INS = (customerID, adminID, serviceID, amount, orderTime, orderDescription) => {
@@ -29,6 +41,12 @@ exports.orders_INS = (customerID, adminID, serviceID, amount, orderTime, orderDe
 }
 exports.orders_SEL_Working = (adminID) => {
     let sql = "select * from orders where adminID = ? and orderStatus = '0'";
+    return Promise.using(util.getConn(), function(conn) {
+        return conn.queryAsync(sql, [adminID]);
+    });
+}
+exports.orders_SEL_Not_Working = (adminID) => {
+    let sql = "select * from orders where adminID = ? and orderStatus != '0'";
     return Promise.using(util.getConn(), function(conn) {
         return conn.queryAsync(sql, [adminID]);
     });
@@ -60,6 +78,20 @@ exports.orderDetail = (orderID) => {
         "s.serviceTitle,s.servicePrice,s.serviceDescription " +
         "from orders as o " +
         "join customers as c on(o.customerID=c.customerID) " +
+        "join service as s on(o.serviceID=s.serviceID) " +
+        "where orderID=?;"
+    return Promise.using(util.getConn(), function(conn) {
+        return conn.queryAsync(sql, [orderID]);
+    });
+}
+
+//Table orders & service & admin
+exports.orderDetail_Customer = (orderID) => {
+    let sql = "select o.orderID,o.amount,o.orderTime,o.orderStatus,o.orderDescription," +
+        "a.email,a.adminName,a.portrait," +
+        "s.serviceTitle,s.servicePrice,s.serviceDescription " +
+        "from orders as o " +
+        "join admin as a on(o.adminID=a.adminID) " +
         "join service as s on(o.serviceID=s.serviceID) " +
         "where orderID=?;"
     return Promise.using(util.getConn(), function(conn) {

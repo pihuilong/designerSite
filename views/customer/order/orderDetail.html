@@ -22,52 +22,29 @@
 		<h4>订单信息</h4>
 		<table border="1px" bordercolor="#aaa">
 			<tr>
-				<td class="title">客户：</td>
-				<td class="data"><%= detail.customerName %></td>
-				<td class="title">客户性别：</td>
-				<td class="data">
-					<% if(detail.sex == "1"){ %>
-						男
-					<% }else{ %>
-						女
-					<% } %>
-				</td>
-			</tr>
-			<tr>
-				<td class="title">客户Email：</td>
+				<td class="title">设计师：</td>
+				<td class="data"><%= detail.adminName %></td>
+				<td class="title">Email：</td>
 				<td class="data"><%= detail.email %></td>
-				<td class="title">客户电话：</td>
-				<td class="data"><%= detail.tel %></td>
 			</tr>
 			<tr>
 				<td class="title">订单状态：</td>
 				<td class="data" style="color: red;">
 					<% if(detail.orderStatus == "0"){ %>
-						处理中
+						处理中，请确保联系方式畅通
 					<% }else if(detail.orderStatus == "1"){ %>
 						已完成
 					<% }else{ %>
-						已取消
+						不合适，设计师已取消该订单
 					<% } %>
 				</td>
 				<td class="title">下单时间：</td>
 				<td class="data"><%= detail.orderTime %></td>
 			</tr>
 			<tr>
-				<td class="title">用户描述：</td>
+				<td class="title">订单描述：</td>
 				<td class="data" colspan="3"><%= detail.orderDescription %></td>
 			</tr>
 		</table>
 	</div>
-	<% if(detail.orderStatus == "0"){ %>
-		<div class="orderTable" style="text-align: center;padding-top: 20px;">
-			<select name="status" class="btn btn-default">
-				<option value="0">处理中</option>
-				<option value="1">完成</option>
-				<option value="-1">取消</option>
-			</select><br /><br />
-			<button class="btn btn-info refresh" data-orderid = "<%= detail.orderID %>">更新订单状态</button>
-			<div class="msg-box"></div>
-		</div>
-	<% } %>
 </div>

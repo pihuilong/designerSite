@@ -22,6 +22,10 @@ body{
     background-color: @bgColor;
     font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
+#customer_page{ //针对于客户的后台
+    background: linear-gradient(to right,lightblue,darkcyan);
+    background-color: lightblue;
+}
 .admin{
     width: 1200px;
     background-color: @bgDarkGrey;
@@ -196,6 +200,10 @@ body{
                 & > .name{
                     font-size: 20px;
                     font-weight: bolder;
+                    & > span{
+                        font-size: 12px;
+                        font-weight: 100;
+                    }
                 }
                 & > .job{
                     color: grey;
@@ -378,8 +386,8 @@ body{
             & > .title{
                 font-weight: bold;
             }
-            & input[type="text"]{
-                width: 200px;
+            & input[type="text"],input[type="tel"],input[type="email"]{
+                width: 250px;
             }
         }
     }

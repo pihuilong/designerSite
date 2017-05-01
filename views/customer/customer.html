@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人中心</title>
+		<link rel="stylesheet" type="text/css" href="/css/admin/admin.css" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="bookmark" href="/favicon.ico" />
+		<script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/checkstr.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/router.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body id="customer_page">
+		<div class="admin">
+			<!-- adminleft -->
+			<div class="admin-left">
+				<div class="banner">
+					<a href="/customer/">
+						<img src="/uploads/customer/<%=customer.photo%>" />
+						<span><%=customer.email%></span>
+					</a>
+				</div>
+
+				<div class="nav">
+					<ul>
+						<li>
+							<a href="#infochange">更新/修改个人资料</a>
+						</li>
+						<li>
+							<a href="#ordershow/0">订单管理  <span class="badge orderNum"></span></a>
+							<ul class="second-nav">
+								<li>
+									<a href="#ordershow/0">处理中订单</a>
+								</li>
+								<li>
+									<a href="#ordershow/1">历史订单</a>
+								</li>
+							</ul>
+						</li>
+						<li style="display: none;"></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //adminleft -->
+
+			<!-- adminright -->
+			<div class="admin-right">
+				<div class="right-top">
+					<div class="icons">
+						<a class="glyphicon glyphicon-user" title="我的基本信息"></a>
+						<a class="glyphicon glyphicon-comment" title="系统信息"></a>
+						<a class="glyphicon glyphicon-off" href="javascript:;" title="退出登录" id="logout"></a>
+					</div>
+				</div>
+
+				<div class="right-info">
+					<div class="brief-info">
+						<img src="/uploads/customer/<%=customer.photo%>" />
+						<div class="text-infomation">
+							<p class="name">
+								<%=customer.customerName%> &nbsp;&nbsp;&nbsp;&nbsp;
+								<span>
+									<% if(customer.sex == 1){ %>
+										男
+									<%}else{%>
+										女
+									<%}%>
+								</span>&nbsp;
+								<span>
+									<%=customer.age%>
+								</span>
+							</p>
+							<span class="job"><%=customer.email%></span><br />
+							<span class="job"><%=customer.tel%></span>
+						</div>
+					</div>
+					<div class="operation">
+						<a href="#infochange" class="glyphicon glyphicon-pencil" title="修改资料"></a>
+						<a href="javascript:;" class="glyphicon glyphicon-off close_brief" title="关闭"></a>
+					</div>
+				</div>
+
+				<div class="view-window" id="contents">
+
+				</div>
+				
+				<div class="resume-window clearfix" id="resumeContents">
+					
+				</div>
+			</div>
+			<!-- //adminright -->
+		</div>
+		<script src="/js/customer/customer-router.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//客户简要信息进行隐藏或显示
+				var $brief = $(".right-info");
+				$(".close_brief").click(function(){
+					$brief.css("height","0px").css("padding","0px 40px 0px 140px").css("opacity","0");
+				});
+				$(".glyphicon-user").click(function(){
+					$brief.css("height","150px").css("padding","20px 40px 20px 140px").css("opacity","1");
+				});
+				
+				//客户退出登录
+				$("#logout").click(function(){
+					$.ajax({
+						type:"get",
+						url:"/login/customerlogout",
+						async:true
+					}).then(function(){
+						window.location.href = localStorage.getItem("designerSite");
+					})
+				});
+			});
+		</script>
+	</body>
+
+</html>

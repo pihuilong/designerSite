@@ -51,6 +51,7 @@
 	<%}%>
 </div>
 <script type="text/javascript">
+	//客户退出登录
 	$("#logout").click(function(){
 		$.ajax({
 			type:"get",
@@ -59,7 +60,7 @@
 		}).then(function(){
 			window.location.reload();
 		})
-	})
+	});
 </script>
 <!-- //top-->
 <!-- banner -->

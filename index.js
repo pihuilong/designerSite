@@ -53,7 +53,7 @@ app.use("/home", require('./router/homeRouter.js')); //设计师主页路由表
 app.use("/login", require('./router/loginRouter.js')); //登录路由表
 app.use("/register", require('./router/registerRouter.js')); //注册路由表
 app.use("/admin", util.checklogin, require('./router/adminRouter.js')); //设计师后台路由表
-app.use("/customer", util.checkloginCustomer, require('./router/customerRouter.js'));
+app.use("/customer", util.checkloginCustomer, require('./router/customerRouter.js')); //客户后台路由表
 
 
 
