@@ -6,6 +6,10 @@ body {
   min-height: 500px;
   font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
+#customer_login {
+  background: linear-gradient(to right, grey, #ccc);
+  background-color: grey;
+}
 .form-signin {
   width: 450px;
   margin: 0 auto;

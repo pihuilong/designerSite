@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			<%= admin.adminName %>的服务</title>
+		<link href="/css/site.min.css" rel="stylesheet">
+		<link href="/css/visitor/works.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/css/animation.css"/>
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script src="/js/site.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/checkstr.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/business.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!-- top -->
+		<!--<div class="topnav">
+			<a href="/home/<%=admin.adminName%>">个人主页</a>
+			<div class="clearfix"></div>
+		</div>-->
+		<nav role="navigation" class="navbar navbar-custom">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<a href="/home/<%=admin.adminName%>" data-adminid = "<%=admin.adminID%>" data-customerid = "<%= customer.customerID %>" class="navbar-brand">
+						<%=admin.adminName%>
+					</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div id="bs-content-row-navbar-collapse-5" class="navbar-collapse collapse" style="height: 1px;">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active">
+							<a href="/home/<%=admin.adminName%>/resume">简历</a>
+						</li>
+						<li class="active">
+							<a href="/home/<%=admin.adminName%>/business">业务</a>
+						</li>
+						<!-- <li class="disabled"><a href="#">Link</a></li> -->
+					</ul>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+		<!-- //top-->
+		<!-- works-->
+		<div class="works-container container-fluid">
+			<!--documents-->
+			<div class="row row-offcanvas row-offcanvas-left">
+				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" role="navigation">
+					<ul class="list-group panel">
+						<li class="list-group-item"><i class="glyphicon glyphicon-align-justify"></i> <b>服务类型</b></li>
+						<% types.map(function(type){ %> 
+							<li class="list-group-item typeMenu" data-typeid = "<%=type.typeID%>">
+								<i><img src="/uploads/service/<%=type.typeImg%>" style="width: 14px;" /></i><b><%=type.typeName%></b> <br />
+								<p style="margin-left:22px"><%=type.typeDescription%></p>
+							</li>
+						<%})%>
+					</ul>
+				</div>
+				
+				
+				<div class="col-xs-12 col-sm-9 content">
+					<div class="panel panel-default anini-box">
+						<div class="panel-heading">
+							<h3 class="panel-title"><a href="javascript:void(0);" class="toggle-sidebar"><span class="fa fa-angle-double-left" data-toggle="offcanvas" title="Maximize Panel"></span></a> 服务列表 </h3>
+						</div>
+						<div class="panel-body">
+							<div class="content-row">
+								<ul id="da-thumbs" class="da-thumbs">
+									<h3 style="text-align: center;color: blue;padding-top: 30px;">请在左侧选择服务类型</h3>
+								</ul>
+							</div> 
+						</div>
+						<!-- panel body -->
+					</div>
+				</div>
+				<!-- content -->
+			</div>
+		</div>
+		<!-- //works -->
+		<!-- footer -->
+		<div class="copy-right">
+			<div class="container">
+				<p> &copy; 2017 bonnielee.com. All Rights Reserved | Design by Bonnie & Hiram</p>
+			</div>
+		</div>
+		<!-- footer -->
+	</body>
+
+</html>

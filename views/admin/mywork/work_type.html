@@ -1,0 +1,45 @@
+<div class="worksType">
+	<div class="typeAdd">
+		<h4>添加分类</h4>
+		<form action="" method="post" class="text-center">
+			<div class="input-group">
+			    <span class="input-group-addon" id="sizing-addon3">* 分类名</span>
+			    <input type="text" id="typename" class="form-control" placeholder="" aria-describedby="sizing-addon3">
+			</div>
+			<div class="input-group">
+			    <span class="input-group-addon" id="sizing-addon3">描述</span>
+			    <input type="text" class="form-control" id="typedesc" placeholder="" aria-describedby="sizing-addon3">
+			</div>
+			<div class="message addMsg"></div>
+			<input type="submit" class="btn btn-default" value="添加"/>
+		</form>
+	</div>
+	<div class="typeChange">
+		<h4>修改/删除</h4>
+		<div class="container-fluid">
+			<% if(types.length==0){ %> 
+				<p>尚未添加分类</p>
+			<% }else { %>
+				<% types.map(function(type){ %> 
+					<div class="typeItems col-md-4 col-lg-4">
+						<span>分类名：</span>
+						<p><%= type.typeName%></p>
+						<span>描述：</span>
+						<p><%= type.typeDescription%></p>
+						<button class="btnChange">修改</button>
+						<button class="btnDelete" data-typeid = "<%=type.typeID%>">删除</button>
+						<div class="errMsg"></div>
+						<div class="typeModify">
+							<h5>* 分类名</h5>
+							<input type="text" class="typeNameChg" value="<%= type.typeName%>" placeholder="请输入作品分类名"/>
+							<br />
+							<h5>分类描述</h5>
+							<textarea class="typeDesChg" rows="2" cols="20"><%= type.typeDescription%></textarea>
+							<button class="btn btn-default doChanges" data-typeid = "<%=type.typeID%>">确认修改</button>
+						</div>
+					</div>
+				<% }) %>
+			<% } %>
+		</div>
+	</div>
+</div>

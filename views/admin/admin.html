@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>后台管理</title>
+		<link rel="stylesheet" type="text/css" href="/css/admin/admin.css" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="bookmark" href="/favicon.ico" />
+		<script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/checkstr.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/router.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="admin">
+			<!-- adminleft -->
+			<div class="admin-left">
+				<div class="banner">
+					<a href="/admin/">
+						<img src="/uploads/admin/<%=admin.portrait%>" />
+						<span><%=admin.email%></span>
+					</a>
+				</div>
+
+				<div class="nav">
+					<ul>
+						<li>
+							<a href="#indexshow">主页信息</a>
+							<ul class="second-nav">
+								<li>
+									<a href="#indexshow">查看</a>
+								</li>
+								<li>
+									<a href="#indexchange">修改</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#resumeshow">个人简历</a>
+							<ul class="second-nav">
+								<li>
+									<a href="#resumeshow">查看/添加</a>
+								</li>
+								<li>
+									<a href="#resumechange">修改/删除</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#myworkshow">个人作品</a>
+							<ul class="second-nav">
+								<li>
+									<a href="#myworktype">作品分类</a>
+								</li>
+								<li>
+									<a href="#myworkupload">上传作品</a>
+								</li>
+								<li>
+									<a href="#myworkchange">修改作品</a>
+								</li>
+								<li>
+									<a href="#myworkshow">查看作品</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#businessshow">服务信息</a>
+							<ul class="second-nav">
+								<li>
+									<a href="#businesstype">服务分类</a>
+								</li>
+								<li>
+									<a href="#businessadd">添加服务</a>
+								</li>
+								<li>
+									<a href="#businesschange">修改服务</a>
+								</li>
+								<li>
+									<a href="#businessshow">查看服务</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#ordershow/0">订单管理  <span class="badge orderNum"></span></a>
+							<ul class="second-nav">
+								<li>
+									<a href="#ordershow/0">处理中订单</a>
+								</li>
+								<li>
+									<a href="#ordershow/1">已完成订单</a>
+								</li>
+								<li>
+									<a href="#ordershow/-1">已取消订单</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //adminleft -->
+
+			<!-- adminright -->
+			<div class="admin-right">
+				<div class="right-top">
+					<div class="icons">
+						<a class="glyphicon glyphicon-user" title="我的基本信息"></a>
+						<a class="glyphicon glyphicon-comment" title="系统信息"></a>
+						<a class="glyphicon glyphicon-off" href="/login/adminlogout" title="退出登录"></a>
+						<a href="/home/<%=admin.adminName%>" class="glyphicon glyphicon-search search" title="查看我的主页"></a>
+					</div>
+				</div>
+
+				<div class="right-info">
+					<div class="brief-info">
+						<img src="/uploads/admin/<%=admin.portrait%>" />
+						<div class="text-infomation">
+							<p class="name">
+								<%=admin.adminName%>
+							</p>
+							<span class="job">设计师 · </span>
+							<p class="experience"><i class="glyphicon glyphicon-calendar"></i> year</p>
+						</div>
+						<div class="stars">
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+						</div>
+					</div>
+					<div class="skill-show">
+						<h5>首页技能</h5>
+						<ul>
+							<li><%= skills[0].skill%></li>
+							<li><%= skills[1].skill%></li>
+							<li><%= skills[2].skill%></li>
+							<li><%= skills[3].skill%></li>
+						</ul>
+					</div>
+					<div class="operation">
+						<a href="#editbase" class="glyphicon glyphicon-pencil" title="修改基本信息"></a>
+						<a href="javascript:;" class="glyphicon glyphicon-off close_brief" title="关闭"></a>
+					</div>
+				</div>
+
+				<div class="view-window" id="contents">
+
+				</div>
+				
+				<div class="resume-window clearfix" id="resumeContents">
+					
+				</div>
+				<script src="/js/admin-router.js" type="text/javascript" charset="utf-8"></script>
+			</div>
+			<!-- //adminright -->
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				//设计师简要信息进行隐藏或显示
+				var $brief = $(".right-info");
+				$(".close_brief").click(function(){
+					$brief.css("height","0px").css("padding","0px 40px 0px 140px").css("opacity","0");
+				});
+				$(".glyphicon-user").click(function(){
+					$brief.css("height","150px").css("padding","20px 40px 20px 140px").css("opacity","1");
+				});
+				
+				//定期更新处理中订单数
+				var $orderNum = $(".orderNum");
+				$._ajax({
+					url : "/admin/orderNum",
+					type : "get",
+					dataType : "json"
+				}).then(function(obj){
+					if(obj.num != 0){
+						$orderNum.html(obj.num);
+					}
+				});
+				setInterval(function(){
+					$._ajax({
+						url : "/admin/orderNum",
+						type : "get",
+						dataType : "json"
+					}).then(function(obj){
+						if(obj.num != 0){
+							$orderNum.html(obj.num);
+						}
+					});
+				},5000);
+				//定时刷新处理中订单，如果页面的hash匹配的话
+				/*if(window.location.hash == "#ordershow/0"){
+					setInterval(function(){
+						window.location.reload();
+					},3000);
+				}*/
+			});
+		</script>
+	</body>
+
+</html>

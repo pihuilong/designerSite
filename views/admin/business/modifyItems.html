@@ -1,0 +1,44 @@
+<% if(services.length == 0){ %>
+	<h3 style="color: red;text-align: center;">该分类还没有添加服务哟！</h3>
+<%}%>
+<% services.map(function(work){ %>
+	<div class="works">
+		<div>
+			<div class="imgBox" data-workimg = "<%=work.serviceLogo%>">
+				<img src="/uploads/service/<%=work.serviceLogo%>"/>
+			</div>
+			<h4>
+				<%=work.serviceTitle%>
+			</h4>
+			<p><%=work.serviceDescription%></p>
+			<h5 style="font-weight: bold;">报价：<span style="color: red;">&yen;<%=work.servicePrice%></span></h5>
+			<br /><br />
+			<button class="btn btn-primary btn-modify">修改</button> &nbsp;&nbsp;&nbsp;
+			<button class="btn btn-danger btn-delete" data-workid = "<%=work.serviceID%>">删除</button>
+			
+			<div class="modify">
+				<div class="input-group">
+					<label for="workName">* 服务名称</label><br />
+					<input type="text" name="workName" class="workName" value="<%=work.serviceTitle%>" placeholder="必须输入作品名" />
+				</div>
+				
+				<div class="input-group">
+					<label for="workDesc">* 服务介绍</label><br />
+					<textarea name="workDesc" class="workDesc" rows="3" cols="30" style="vertical-align: top;" placeholder="请输入作品介绍"><%=work.serviceDescription%></textarea>
+				</div>
+				
+				<div class="input-group">
+					<label for="price">* 报价</label><br />
+					<input type="number" step="0.01" name="price" class="price" placeholder="100.00" value="<%=work.servicePrice%>" />元
+				</div>
+				
+				<div class="message" style="height: 80px;"></div>
+				
+				<input type="submit" class="btn btn-primary submit" value="提交" data-workid = "<%=work.serviceID%>"/> &nbsp;&nbsp;&nbsp;
+				<button class="btn btn-danger cancelModify">取消</button>
+			</div>
+		</div>
+			
+	</div>
+<%})%>
+	

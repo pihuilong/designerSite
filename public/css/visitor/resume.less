@@ -1,0 +1,161 @@
+@bgDark :#323b43;
+@bgMiddle:#707070;
+@bgLight:#dadbdb;
+@fontWhite:#eee;
+
+
+//清除浮动函数
+.clearfix(){
+    &:after{
+        content:"";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    background-color: @bgLight;
+}
+
+//top
+.topnav{
+    width: 100%;
+    padding: 10px 83px;
+    background: @bgDark;
+    & > a{
+        float: right;
+        text-decoration: none;
+        font-size: 14px;
+        color: @bgLight;
+    }
+}
+
+//resume-container
+.resume-container{
+    width: 1200px;
+    background-color: white;
+    margin: 0 auto;
+    box-shadow: 0 0 8px green;
+    
+    //resume-top
+    & > .resume-top{
+        min-height: 150px;
+        overflow: hidden;
+        & > .head-photo{
+            text-align: center;
+            padding-top: 12px;
+            & > img{
+                width: 30%;
+                border-radius: 50%;
+                box-shadow: 0 0 5px @bgDark;
+                transition: all 0.5s ease;
+                &:hover{
+                    transform: scale(1.3);
+                }
+            }
+        }
+        & > .title{
+            & > h2{
+                color: @bgDark;
+            }
+            & > span{
+                font-size: 22px;
+                color: green;
+                font-weight: 600;
+            }
+        }
+        & > .status{
+            position: relative;
+            padding-top: 100px;
+            & > h4{
+                color: red;
+                font-style: italic;
+                font-weight: 100;
+                font-size: 14px;
+            }
+        }
+    }
+    
+    //resume-middle
+    & > .resume-middle{
+        min-height: 350px;
+        background-color: @bgMiddle;
+        
+        & > .base-info{
+            margin-top: 6px;
+            box-shadow: 2px 0px 0px white;
+            & > dl{
+                padding-left: 33%;
+                color: @fontWhite;
+                & > dt{
+                    margin-top: 14px;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+                & > dd{
+                    padding-left: 50px;
+                    font-size: 14px;
+                    color: white;
+                    margin-top: 8px;
+                }
+            }
+        }
+        
+        & > .sub-info{
+            & > dl{
+                padding: 50px 30px;
+                color: aliceblue;
+                & > dt{
+                    text-align: center;
+                    font-size: 16px;
+                    margin-top: 25px;
+                }
+                & > dd{
+                    margin-top: 12px;
+                    & > p{
+                        text-indent: 32px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    
+    //resume-bottom
+    & > .resume-bottom{
+        min-height: 100px;
+        & > h4{
+            text-align: center;
+            color: @bgMiddle;
+            font-weight: 600;
+            padding: 15px 0;
+        }
+        & > .jobtype{
+            text-align: center;
+            padding-bottom: 28px;
+            & > h5{
+                font-size: 16px;
+                font-weight: 400;
+            }
+            & > span{
+                color: darkblue;
+            }
+        }
+    }
+}
+
+//footer
+.copy-right{
+    background-color: @bgDark;
+    padding: 17px 0;
+    & p{
+        text-align: center;
+        margin: 0 0 0px 0;
+        font-size: 14px;
+        color: @bgLight;
+        font-weight: 600;
+    }
+}

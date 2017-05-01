@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title><%= admin.adminName %>的简历</title>
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		<link href="/css/visitor/resume.css" rel="stylesheet">
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+	</head>
+	<body>
+		<!-- top -->
+		<div class="topnav">
+			<a href="/home/<%=admin.adminName%>">个人主页</a>
+			<div class="clearfix"></div>
+		</div>
+		<!-- //top-->
+		<!-- resume-->
+		<div class="resume-container container">
+			<div class="resume-top row">
+				<div class="head-photo col-md-4 col-lg-4 col-sm-4">
+					<img src="/uploads/admin/<%=main.userImg%>"/>
+				</div>
+				<div class="title col-md-4 col-lg-4 col-sm-4">
+					<h2>RESUME OF</h2>
+					<span><%= admin.adminName %></span>
+				</div>
+				<div class="status col-md-4 col-lg-4 col-sm-4">
+					<h4>
+						<% if(main.workStatus == "1"){ %>
+							  已就业
+						<% }else{ %>
+							  求职中
+						<% } %>
+					</h4>
+				</div>
+			</div>
+			
+			<div class="resume-middle row">
+				<div class="base-info col-lg-4 col-md-4 col-sm-4">
+					<dl>
+						<dt>姓名</dt>
+						<dd><%=main.userName%></dd>
+						<dt>性别</dt>
+						<dd>
+							<% if(main.sex == "0"){ %>
+								女
+							<% }else{ %>
+								男
+							<% } %>
+						</dd>
+						<dt>出生日期</dt>
+						<dd>
+							<%= main.birth.split("T")[0] %>
+						</dd>
+						<dt>现居地</dt>
+						<dd><%=main.nativePlace%></dd>
+						<dt>学历</dt>
+						<dd>
+							<% if(main.highestQualification == "1"){ %>
+								高中
+							<% }else if(main.highestQualification == "2"){ %>
+								中专
+							<% }else if(main.highestQualification == "3"){ %>
+								大专
+							<% }else if(main.highestQualification == "4"){ %>
+								本科
+							<% }else if(main.highestQualification == "5"){ %>
+								研究生
+							<% }else if(main.highestQualification == "6"){ %>
+								硕士
+							<% }else if(main.highestQualification == "7"){ %>
+								博士
+							<% } %>
+						</dd>
+						<dt>工作年限</dt>
+						<dd><%=main.workYear%>年</dd>
+						<dt>Email</dt>
+						<dd><%=main.mailbox%></dd>
+					</dl>
+				</div>
+				<div class="sub-info col-lg-8 col-md-8 col-sm-8">
+					<dl>
+						<dt>专业技能</dt>
+						<dd>
+							<p><%=sub.specializeSkill%></p>
+						</dd>
+						<dt>工作经历</dt>
+						<dd>
+							<p>
+								<% if(sub.workExperience==""){ %> 
+									<span style="color: deepskyblue;text-align: center;display: block;">提示信息：“主人有点忙，还没有完善相关信息哦”</span>
+								<%}else{ %>
+									<%=sub.workExperience%>
+								<%}%>
+							</p>
+						</dd>
+						<dt>教育经历</dt>
+						<dd>
+							<p>
+								<% if(sub.educationExperience==""){ %> 
+									<span style="color: deepskyblue;text-align: center;display: block;">提示信息：“主人有点忙，还没有完善相关信息哦”</span>
+								<%}else{ %>
+									<%=sub.educationExperience%>
+								<%}%>
+							</p>
+						</dd>
+						<dt>培训经历</dt>
+						<dd>
+							<p>
+								<% if(sub.trainingExperience==""){ %> 
+									<span style="color: deepskyblue;text-align: center;display: block;">提示信息：“主人有点忙，还没有完善相关信息哦”</span>
+								<%}else{ %>
+									<%=sub.trainingExperience%>
+								<%}%>
+							</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<% if(main.workStatus == "2"){ %>
+				<div class="resume-bottom row">
+					<h4>就业意向</h4>
+					<div class="jobtype col-lg-4 col-md-4 col-sm-4">
+						<h5>工作性质</h5>
+						<span>
+							<% if(main.jobspecification == "1"){ %>
+								   兼职
+							<% }else{ %>
+								   全职
+							<% } %>
+						</span>
+					</div>
+					<div class="jobtype col-lg-4 col-md-4 col-sm-4">
+						<h5>意向地址</h5>
+						<span><%=main.willSpot%></span>
+					</div>
+					<div class="jobtype col-lg-4 col-md-4 col-sm-4">
+						<h5>期望行业</h5>
+						<span><%=main.promisingIndustry%></span>
+					</div>
+				</div>
+			<% } %>
+		</div>
+		<!-- //resume -->
+		<!-- footer -->
+		<div class="copy-right">
+			<div class="container">
+				<p> &copy; 2017 bonnielee.com. All Rights Reserved | Design by  Bonnie & Hiram</p>
+			</div>
+		</div>
+		<!-- footer -->
+	</body>
+</html>

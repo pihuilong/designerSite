@@ -3,15 +3,22 @@
 //数据库操作接口
 var mysql = require('mysql');
 Promise.promisifyAll(require("mysql/lib/Connection").prototype); //将所有MySQL中的connectionPromise化
+Promise.promisifyAll(require("mysql/lib/Pool").prototype);
 exports.getConn = () => {
     //连接数据库
-    var connection = mysql.createConnection({
+    var pool = mysql.createPool({
+        connectionLimit: 10,
         host: '127.0.0.1',
         user: 'root',
         password: '',
         database: 'designersite'
     });
-    return connection;
+    return pool.getConnectionAsync().disposer(function(connection) {
+        try {
+            // connection.release();
+            connection.destroy();
+        } catch (e) { console.log(e) };
+    });
 }
 
 
@@ -23,13 +30,37 @@ exports.checklogin = (req, res, next) => {
     next();
 }
 
+//检查是否存在某管理员
+exports.checkAdmin = (req, res, next) => {
+    let admin = req.params.user;
+    adminModel.admin_exist(admin).then((adminResult) => {
+        if (adminResult.length == 1) {
+            req.params.adminID = adminResult[0].adminID;
+            req.params.email = adminResult[0].email;
+            req.params.portrait = adminResult[0].portrait;
+            next();
+        } else {
+            res.redirect('/404.html');
+        }
+    });
+}
+
+//检查客户是否登录
+exports.checkloginCustomer = (req, res, next) => {
+    if (!req.session.customer) {
+        return res.redirect("/customer_login.html");
+    }
+    next();
+}
+
+
 //使用multer配置文件上传
 var multer = require("multer");
-exports.uploadFile = () => {
+exports.uploadImg = () => {
     var storage = multer.diskStorage({
-        //设置上传后文件路径，uploads文件夹会自动创建。
+        //设置上传后文件路径，uploads文件夹不会自动创建。
         destination: function(req, file, cb) {
-            cb(null, './public/uploads')
+            cb(null, './public/uploads/admin')
         },
         //给上传文件重命名，获取添加后缀名
         filename: function(req, file, cb) {
@@ -43,6 +74,58 @@ exports.uploadFile = () => {
         limits: {}
     });
 }
+exports.uploadWorkImg = () => {
+    var storage = multer.diskStorage({
+        destination: function(req, file, cb) {
+            cb(null, './public/uploads/works')
+        },
+        //给上传文件重命名，获取添加后缀名
+        filename: function(req, file, cb) {
+            var fileFormat = (file.originalname).split(".");
+            cb(null, file.fieldname + '-' + Date.now() + "." + fileFormat[fileFormat.length - 1]);
+        }
+    });
+    return multer({
+        storage: storage,
+        limits: {}
+    });
+}
+exports.uploadBusiness = () => {
+    var storage = multer.diskStorage({
+        destination: function(req, file, cb) {
+            cb(null, './public/uploads/service');
+        },
+        //给上传文件重命名，获取添加后缀名
+        filename: function(req, file, cb) {
+            var fileFormat = (file.originalname).split(".");
+            cb(null, file.fieldname + '-' + Date.now() + "." + fileFormat[fileFormat.length - 1]);
+        }
+    });
+
+    return multer({
+        storage: storage,
+        limits: {}
+    });
+}
+exports.uploadCustomer = () => {
+    var storage = multer.diskStorage({
+        destination: function(req, file, cb) {
+            cb(null, './public/uploads/customer')
+        },
+        //给上传文件重命名，获取添加后缀名
+        filename: function(req, file, cb) {
+            var fileFormat = (file.originalname).split(".");
+            cb(null, file.fieldname + '-' + Date.now() + "." + fileFormat[fileFormat.length - 1]);
+        }
+    });
+
+    return multer({
+        storage: storage,
+        limits: {}
+    });
+}
+
+
 
 //删除文件
 exports.fileDelete = (wholePath) => {
@@ -58,6 +141,11 @@ exports.fileDelete = (wholePath) => {
             });
         }
     });
+}
+
+exports.errorHandle = (err) => {
+    console.log('Time: ', new Date().Format("yyyy-MM-dd hh:mm:ss"));
+    console.log(err.stack);
 }
 
 

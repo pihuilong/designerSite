@@ -21,7 +21,9 @@
   <body>
     <div class="container">
       <form class="form-signin" role="form" action="/login" method="POST" enctype="application/x-www-form-urlencoded">
-        <h3 class="form-signin-heading">请登录</h3>
+        <h3 class="form-signin-heading">请登录
+        	<a href="/" style="font-size: 12px;float: right;color: white;line-height: 26px;">返回首页</a>
+        </h3>
         <div class ="message-box">
           
         </div>
@@ -44,7 +46,8 @@
         </div>
 		<div class="remember">
 			<input type="checkbox" value="remember-me" id="remember"> 
-			<span> 记住我</span>
+			<span> 记住我</span> &nbsp;&nbsp;&nbsp;
+			<a href="admin_register.html" style="color: white;font-style: italic;font-size: 12px;float: right;">还没注册？</a>
 		</div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form>
@@ -97,7 +100,7 @@
           }
           //在jQuery1.7以后，$.ajax使用了promise进行重写,
           $._ajax({
-            url : "/login",
+            url : "/login/admin",
             data : {"username":$user.val(),"password":$pwd.val(),"remember":$remember.is(":checked")}
           }).then(function(data){
             if(data == "ok"){

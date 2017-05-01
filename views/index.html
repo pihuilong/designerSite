@@ -1,458 +1,247 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-	<title>Bonnie的个人网站</title>
-		<link href="css/bootstrap.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- for-mobile-apps -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="keywords" content="Bonnie, designer, UI,设计师" />
-		<script type="application/x-javascript"> 
-			addEventListener("load", function() { 
-				setTimeout(hideURLbar, 0); 
-			}, false);
-//			手机打开页面后收起地址栏 hideURLbar  
-			function hideURLbar(){ 
-				window.scrollTo(0,1);
-			} 
-		</script>
-	<!-- //for-mobile-apps -->	
-	<!-- js -->
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script src="js/modernizr.custom.97074.js"></script>
-	<!-- js -->
-	<!-- start-smoth-scrolling -->
-		<script type="text/javascript" src="js/move-top.js"></script>
-		<script type="text/javascript" src="js/easing.js"></script>
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				//设置点击导航项后界面定位到指定位置（有动画效果）
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-		</script>
-	<!-- start-smoth-scrolling -->
-</head>
-<body>
-<!-- top -->
-<div class="topnav">
-	<a href="blog.html">blog</a>
-	<div class="clearfix"></div>
-</div>
-<!-- //top-->
-<!-- banner -->
-<div id="home" class="banner">
-	<div class="container">
-		<div class="banner-grids">
-			<div class="col-md-4 navigation">
-				<div class="nav-left">
-					<div class="grid__item color-4">
-						<a class="link link--kumya" href="#home"><span data-letters="Bonnie">Bonnie</span></a>
-					</div>
-				</div>
-				<div class="nav-right">
-						<span class="menu"><img src="images/menu.png" alt="" /></span>
-							<nav class="cl-effect-1">
-								<ul class="nav1">
-									<li><a class="scroll" href="#home">主页</a></li>
-									<li><a class="scroll" href="#about">关于我</a></li>
-									<li><a class="scroll" href="#portfolio">作品展示</a></li>
-									<li><a class="scroll" href="#services">服务</a></li>
-									<li><a class="scroll" href="#contact">联系我</a></li>
-								</ul>
-							</nav>
-							<!-- script for menu -->
-							<script> 
-								$( "span.menu" ).click(function() {
-								$( "ul.nav1" ).slideToggle( 300, function() {
-								 // Animation complete.
-								});
-								});
-							</script>
-							<!-- //script for menu -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="col-md-8 banner-image text-center">
-				<img src="images/banner.png" alt=""/>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-</div>
-<!-- //banner -->
-<!-- about -->
-<div id="about" class="about">
-	<div class="container">
-		<div class="about-info">
-				<h3>关于我</h3>
-				<h4>我是谁&我为什么要从事设计</h4>
-				<p>我是一名热爱设计的设计师，喜欢一切美的事物，
-					也觉得一切事物都可以被设计得更好让人有更好的感受，,这也是我的设计核心。
-					很多企业的公司、APP、产品有时候不是不够好，而是设计上没达到受众的要求而被忽略，
-					这样往往很可惜，希望我的设计能为这种现象贡献出绵薄之力。</p>
-		</div>
-		<div class="about-grids">
-		   	<div class="col-md-6 about-grid">
-		   		<h4>我的经验</h4>
-		   		<p>曾为多家公司设计logo，多次接平面设计任务，如传单、喷画、画册、名片等。</p>
-		   	</div>
-		   	<div class="col-md-6 about-grid">
-		   		<h4>我的愿景</h4>
-		   		<p>日本、欧美等国家的设计目前比较成熟，我国的设计刚刚起步没多久，
-		   			有非常大的潜力与市场，相信经过一代人的努力，
-		   			我国的设计会紧随经济的发展达到一个新的高度，我愿成为耕耘的其中一名。</p>
-		   	</div>
-		   	<div class="clearfix"> </div>
-		</div>  
-		<a class="more" href="/resume.html" target="_blank">查看更多</a>
-	</div>
-</div>
-<!-- //about -->
-<!-- my skills -->
-	<div class="our-skills">
-		<div class="container">
-			<div class="skill-info">
-				<h2>我的技能</h2>
-			</div>
-			<div class="skill-grids">
-					<div class="col-md-3 skills-grid text-center">
-						<div class="circle" id="circles-1"></div>
-						<p>网页设计</p>
-					</div>
-					<div class="col-md-3 skills-grid text-center">
-						<div class="circle" id="circles-2"></div>
-						<p>HTML/CSS</p>
-					</div>
-					<div class="col-md-3 skills-grid text-center">
-						<div class="circle" id="circles-3"></div>
-						<p>平面设计</p>
-					</div>
-					<div class="col-md-3 skills-grid text-center">
-						<div class="circle" id="circles-4"></div>
-						<p>UI/UX</p>
-					</div>
-					<div class="clearfix"> </div>
-				 <script type="text/javascript" src="js/circles.js"></script>
-					         <script>
-								var colors = [
-										['#787878', '#01afec'], ['#787878', '#01afec'], ['#787878', '#01afec'], ['#787878', '#01afec']
-									];
-								var child1 = document.getElementById('circles-1')
-								Circles.create({
-									id:         child1.id,
-									percentage: 85,
-									radius:     80,
-									width:      10,
-									number:   	85,
-									text:       '%',
-									colors:     colors[0]
-								});
-								$(child1.parentElement).bind("mouseenter",function(){
-									Circles.create({
-										id:         child1.id,
-										percentage: 85,
-										radius:     80,
-										width:      10,
-										number:   	85,
-										text:       '%',
-										colors:     colors[0]
-									});
-								});
-								for (var i = 2; i < 5; i++) {
-									var child = document.getElementById('circles-' + i),
-										percentage = 50 + (i * 10);
-									Circles.create({
-										id:         child.id,
-										percentage: percentage,
-										radius:     80,
-										width:      10,
-										number:   	percentage,
-										text:       '%',
-										colors:     colors[i - 1]
-									});
-									!function(child,percentage){
-										$(child.parentNode).bind("mouseenter",function(){
-											Circles.create({
-												id:         child.id,
-												percentage: percentage,
-												radius:     80,
-												width:      10,
-												number:   	percentage,
-												text:       '%',
-												colors:     colors[0]
-											});
-										});
-									}(child,percentage);
-								}
-						
-				</script>
-			</div>
-			<a class="more" href="/resume.html" target="_blank">查看更多</a>
-		</div>	
-	</div>
-<!-- //my skills -->
-<div id="portfolio" class="gallery">
-		<div class="container">
-			<script src="js/jquery.chocolat.js"></script>
-			<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
-			<!--light-box-files -->
-			<script type="text/javascript" charset="utf-8">
-			$(function() {
-				$('.gallery section a').Chocolat(
-					{
-						fadeInOverlayduration:300,
-						fadeInImageduration:200,
-						fadeOutImageduration:300,
-					}
-				);
-			});
-			</script>
-			<h3>作品展示</h3>
-			<section>
-				<ul id="da-thumbs" class="da-thumbs">
-					<li>
-						<a href="images/a1.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/a1.jpg" alt="" />
-							<div>
-								<h5>VIEW</h5>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="images/a2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/a2.jpg" alt="" />
-							<div>
-								<h5>VIEW</h5>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="images/a3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/a3.jpg" alt="" />
-							<div>
-								<h5>VIEW</h5>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="images/a4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/a4.jpg" alt="" />
-							<div>
-								<h5>VIEW</h5>
-							</div>
-						</a>
-					</li>
-					<li>	
-						<a href="images/a5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/a5.jpg" alt="" />
-							<div>
-								<h5>VIEW</h5>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="images/a6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/a6.jpg" alt="" />
-							<div>
-								<h5>VIEW</h5>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="images/a7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/a7.jpg" alt="" />
-							<div>
-								<h5>VIEW</h5>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="images/a1.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/a1.jpg" alt="" />
-							<div>
-								<h5>VIEW</h5>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="images/a2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
-							<img src="images/a2.jpg" alt="" />
-							<div>
-								<h5>VIEW</h5>
-							</div>
-						</a>
-					</li>
-					<div class="clearfix"> </div>
-				</ul>
-			</section>
-				<script type="text/javascript" src="js/jquery.hoverdir.js"></script>	
-				<script type="text/javascript">
-					$(function() {
-						$(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
-					});
-				</script>
-			<a class="more" href="/mywork.html" target="_blank">查看更多</a>
-        </div>	
-</div>
-<!--//gallery-->
-<!--services-->
-<div id="services" class="services">
-	<div class="container">
-		<div class="ser-head">
-			<h3>特色服务</h3>
-		</div>
-		<div class="wel-grids">
-			<div class="col-md-4 wel-grid btm-gre text-center">
-				<div class="btm-clr">
-					<figure class="icon">
-						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-					</figure>
-					<h3>UI设计</h3>
-					<p> 各种图标绘制、手机主题设计、APP实战项目、
-						多媒体终端界面设计、智能穿戴设备界面设计、用户体验设计与AE动效设计等</p>
-				</div>
-			</div>
-			<div class="col-md-4 wel-grid btm-gre text-center">
-				<div class="btm-clr">
-					<figure class="icon">
-						<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-					</figure>
-					<h3>电商设计</h3>
-					<p> 从设计构图、创意思路、表现手法、效果打造、细节把握等多个方面全面设计电商广告，
-						完成店铺装修、Banner制作、商业海报、H5页面等</p>
-				</div>
-			</div>
-			<div class="col-md-4 wel-grid btm-gre text-center">
-				<div class="btm-clr">
-					<figure class="icon">
-						<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-					</figure>
-					<h3>网页设计</h3>
-					<p> Web端网页界面设计，根据不同企业的不同需求做出网页的个性化设计，
-						包括网页图标、艺术字、Banner图等并融入用户体验设计</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-			</div>
-			<div class="col-md-3 wel-grid btm-gre text-center">
-				<div class="btm-clr">
-					<figure class="icon">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-					</figure>
-					<h3>平面设计</h3>
-					<p> VIP卡设计、海报设计、户外广告设计、DM单页设计、
-						折页设计、画册设计、手提袋设计、VI设计及展架设计等</p>
-				</div>
-			</div>
-			<div class="col-md-3 wel-grid btm-gre text-center">
-				<div class="btm-clr">
-					<figure class="icon">
-						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-					</figure>
-					<h3>HTML/CSS/JS</h3>
-					<p> 网页基本前端的实现，包括规范制作完成符合W3C标准的HTML页面，并解决适配兼容性问题；
-						掌握JS基础流程控制及利用JQ实现常用特效；
-						利用html5与css3制作适应不同终端的H5个性特效网站</p>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<a class="more" href="/business.html" target="_blank">查看更多</a>
-	</div>
-</div>
-<!--//services-->
-<!--news-->
-<!--<div class="news">
-	<div class="container">
-		<h3>NEWSLETTER SIGN UP</h3>
-		<p> Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing. </p>
-		<div class="na-m">
-			<div class="name">
-				<form>
-					<input type="text" placeholder="Enter email id" required="">
-				</form>
-			</div>
-			<div class="button">
-				<form>
-					<input type="submit" value="Subscribe">
-				</form>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
-</div>-->
-<!--//news-->
-<!-- get-in -->
-<div id="contact" class="get-in-touch">
-	<div class="container">
-		<div class="get-info text-center">
-			<h3>联系我</h3>
-			<h4><i>邮箱：bonnielee@qq.com</i></h4>
-			<p>地址：广东省江门市蓬江区五邑大学</p>
-		</div>
-	</div>
-	<div class="map">
-		<iframe src="/baidu_map.html" frameborder="0" style="border:0;margin: 0 auto;width: 700px;position: relative;left: 50%;margin-left: -350px;" scrolling="no"></iframe>
-	</div>
-</div>
-<!-- //get-in -->
-<!-- contact-us -->
-<!--<div class="contact-us">
-	<div class="container">
-		<div class="contact-grids">
-			<div class="col-md-4 contact-grid text-center">
-				<div class="point-icon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></div>
-				<p>广东省江门市蓬江区五邑大学</p>
-			</div>
-			<div class="col-md-4 contact-grid text-center">
-				<div class="point-icon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
-				<p><a href="mailto:info@example.com">rudhisasmito@gmail.com</a></p>
-			</div>
-			<div class="col-md-4 contact-grid text-center">
-				<div class="point-icon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></div>
-				<p>+613 0000 0000</p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<div class="contact-info">
-			<form>
-				<input type="text" placeholder="Your Name" required>
-				<input type="text" placeholder="Your E-Mail" required>
-				<input type="text" placeholder="Subject" required>
-				<textarea placeholder="Your Message" required></textarea>
-				<input type="submit" value="SEND MESSAGE">
-			</form>
-		</div>
-	</div>
-</div>-->
-<!-- //contact-us -->
-<!-- footer -->
-<div class="copy-right">
-	<div class="container">
-		<p> &copy; 2017 bonnielee.com. All Rights Reserved | Design by  Bonnie & Hiram</p>
-	</div>
-</div>
-<!-- footer -->
-<!-- smooth scrolling -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-		/*
-			var defaults = {
-			containerID: 'toTop', // fading element id
-			containerHoverID: 'toTopHover', // fading element hover id
-			scrollSpeed: 1200,
-			easingType: 'linear' 
-			};
-		*/								
-		$().UItoTop({ easingType: 'easeOutQuart' });
-		});
-	</script>
-	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-<!-- //smooth scrolling -->
-</body>
+        <title>设计师网站平台</title>
+
+        <link href="/css/site.min.css" rel="stylesheet">
+        <link href="/css/index/bootstrap-theme.min.css" rel="stylesheet">
+
+        <link href="/css/index/owl.carousel.css" rel="stylesheet">
+        <link href="/css/index/owl.theme.default.min.css" rel="stylesheet">
+
+        <link href="/css/index/magnific-popup.css" rel="stylesheet">
+
+        <link href="/css/index/index.css" rel="stylesheet">
+
+
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="menu-item" class="menu-item hide-menu">
+            <div class="container">
+                <ul>
+                    <a href="index.html"><li>主页</li></a>
+                    <a href="#about"><li>平台简介</li></a>
+                    <a href="#workstation"><li>案例</li></a>
+                    <a href="#contact"><li>联系我</li></a>
+                    <a href="admin_login.html"><li>设计师登录</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <header class="bg-img header">
+                <nav class="navbar navbar-default navbar-vira">
+                    <div class="container">
+                        <div class="navigation-bar">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="logo">
+                                        <a href="index.html"><span class="fa fa-male"></span></a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="menu m">
+                                        <a href="#"><span class="ion-navicon _ion-android-menu"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container">
+                    <div class="row">
+                        <div class="intro-box">
+                            <div class="intro">
+                                <h1>设计师个人网站</h1>
+                                <p>创建专属于您的设计师个人网站</p>
+                                <a class="btn vira-btn" href="admin_register.html">免费创建</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section id="about" class="about section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <h2 class="title">平台简介</h2>
+                            <p>
+                                	专注服务于设计师，无论你是初入设计领域的新人，还是设计领域大 niu，都应该拥有一个简洁而高大上的专属个人网站。
+                                	通过这个个人网站，你不仅可以展示个人的资历，还能展示你独创的作品，甚至能积累自己的用户群体，出售自己的设计服务。
+                            </p>
+                            <img src="/images/index/signature.png">
+                            <span>Hiram Pierce</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="purpose section">
+                <div class="container">
+                    <h2 class="title">主要功能</h2>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                    <div class="card-icon">
+                                        <span class="fa fa-female" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>简历展示</h3>
+                                    <p>
+                                        	编辑首页个人信息。特创简历模块，设计师可以编辑多份个人简历，并选择一份进行展示。实力派就是要秀！
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                    <div class="card-icon">
+                                        <span class="fa fa-cogs" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>作品展示</h3>
+                                    <p>
+                                        	可通过网站向更多人展示你的作品，作品模块可编辑作品分类、上传作品至分类、编辑作品等，可选择在个人首页展示的作品。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                    <div class="card-icon">
+                                        <span class="fa fa-money" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>服务系统&客户系统</h3>
+                                    <p>
+                                        	可展示你的设计服务，服务模块可以编辑服务分类、添加或编辑服务等，客户能看到服务的相应参考价格并进行预约。访问者可在个人首页注册成为你的专属客户。
+                                        	从此再也不必担心业余时间没单可做了。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="workstation" class="work section" style="background-color: white;">
+                <div class="container">
+                    <h2 class="title">案例</h2>
+                    <div id="workstation-slider" class="owl-carousel">
+                    	<% admins.map(function(admin){ %>
+                    		<div class="item">
+	                            <div class="vira-card">
+	                                <div class="vira-card-header">
+	                                    <img class="img-responsive" src="uploads/admin/<%= admin.portrait %>" style="height: 214px;width: auto;margin: 0 auto;">
+	                                </div>
+	                                <div class="vira-card-content">
+	                                    <h3><%= admin.adminName %></h3>
+	                                    <p>
+	                                        <a href="/home/<%=admin.adminName%>">http://bonnielee.com/home/<%=admin.adminName%></a>
+	                                    </p>
+	                                </div>
+	                            </div>
+	                        </div>
+                    	<%})%>
+                    </div>
+                </div>
+            </section>
+            <section class="vira-quote section bg-img">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <img class="quote" src="/images/index/quote.png">
+                           <p>
+                               	少就是多，简洁就是丰富。
+                           </p>
+                           <p class="author">To Designers</p>
+                           <img src="/images/index/mouse.png">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="contact section">
+                <div class="container">
+                    <h2 class="title">联系我</h2>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                        <span class="fa fa-map-marker" aria-hidden="true"></span>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>地址</h3>
+                                    <p>
+                                        	广东省江门市蓬江区
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                        <span class="fa fa-phone" aria-hidden="true"></span>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>QQ</h3>
+                                    <p>
+                                        954714777
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                        <span class="fa fa-paper-plane-o" aria-hidden="true"></span>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>邮箱</h3>
+                                    <p>
+                                        954714777@qq.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="social-icons">
+                                <ul>
+                                    <a href="http://t.qq.com/paul954714777?preview" target="_blank"><li><span class="fa fa-tencent-weibo"></span></li></a>
+                                    <!--<a href="#" target="_blank"><li><span class="fa fa-weibo"></span></li></a>-->
+                                    <a href="tencent://message/?Menu=yes&Uin=954714777"><li><span class="fa fa-qq"></span></li></a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p> &copy; 2017 bonnielee.com. All Rights Reserved | Design by Hiram</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/index/owl.carousel.min.js"></script>
+        <!--<script src="https://use.fontawesome.com/55b73bf748.js"></script>-->
+        <script src="/js/index/jquery.magnific-popup.js"></script>
+        <script src="/js/index/script.js"></script>
+    </body>
 </html>

@@ -1,0 +1,27 @@
+<% if(works.length == 0){ %>
+	<h3 style="color: red;text-align: center;">该分类还没有添加作品哟！</h3>
+<%}%>
+<% works.map(function(work){ %> 
+	<li>
+		<a href="/uploads/works/<%=work.workImg%>" rel="title" class="b-link-stripe b-animate-go  thickbox">
+			<img src="/uploads/works/<%=work.workImg%>" alt="" />
+			<div>
+				<h5><%=work.worksName%></h5>
+				<p style="padding: 12px 20px;text-align: center;"><%=work.worksIntro%></p>
+			</div>
+		</a>
+		<a class="text-center" href="<%=work.workHyperLink%>"><%=work.workHyperLink%></a>
+	</li>
+<%})%>
+<div class="clearfix"> </div>
+<script type="text/javascript" charset="utf-8">
+$(function() {
+	$('ul li .thickbox').Chocolat(
+		{
+			fadeInOverlayduration:300,
+			fadeInImageduration:200,
+			fadeOutImageduration:300,
+		}
+	);
+});
+</script>

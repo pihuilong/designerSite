@@ -1,0 +1,31 @@
+<% if(services.length == 0){ %>
+	<h3 style="color: red;text-align: center;">该分类还没有添加服务哦！</h3>
+<%}%>
+<% services.map(function(work){ %> 
+	<li class="service-item">
+		<img src="/uploads/service/<%=work.serviceLogo%>" />
+		<div class="service-desc">
+			<h5><%=work.serviceTitle%></h5>
+			<p><%=work.serviceDescription%></p>
+			<p>参考价格：<span>&yen;<%=work.servicePrice%></span></p>
+			<button class="btn btn-primary order">点击预约</button>
+		</div>
+		<div class="order-info-box">
+			<div class="order-info">
+				<a href="javascript:;" class="fa fa-close"></a>
+				<div class="input-group">
+					<label for="amount">数量：</label><br />
+					<input type="number" name="amount" data-price = "<%=work.servicePrice%>" class="amount" placeholder="请输入数量" />
+				</div>
+				<div class="input-group">
+					<label for="description">描述：</label><br />
+					<textarea name="description" rows="5" placeholder="请输入对该订单的描述"></textarea>
+				</div>
+				<button class="do-order btn btn-primary" data-serviceid = "<%=work.serviceID%>">提交</button>&nbsp;&nbsp;&nbsp;
+				<span class="total"></span>
+				<div class="msg" style="margin-top: 10px;width: 90%;"></div>
+			</div>
+		</div>
+	</li>
+<%})%>
+<div class="clearfix"> </div>

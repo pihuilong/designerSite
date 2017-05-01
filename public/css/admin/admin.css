@@ -56,6 +56,7 @@ body {
   padding: 0;
 }
 .admin-left > .nav > ul > li {
+  position: relative;
   margin-top: 12px;
   padding: 8px 0 8px 0;
 }
@@ -67,6 +68,11 @@ body {
   text-decoration: none;
   font-size: 16px;
 }
+.admin-left > .nav > ul > li > a > .badge {
+  position: absolute;
+  top: -2px;
+  background-color: darkred;
+}
 .admin-left > .nav > ul > li:hover {
   background-color: #333;
 }
@@ -75,16 +81,30 @@ body {
 }
 .admin-left > .nav > ul > li:hover > .second-nav {
   height: 60px;
+  opacity: 1;
+}
+.admin-left > .nav > ul > li:nth-child(3):hover > .second-nav {
+  height: 120px;
+  opacity: 1;
+}
+.admin-left > .nav > ul > li:nth-child(4):hover > .second-nav {
+  height: 120px;
+  opacity: 1;
+}
+.admin-left > .nav > ul > li:last-child:hover > .second-nav {
+  height: 90px;
+  opacity: 1;
 }
 .admin-left > .nav > ul > li > .second-nav {
   height: 0;
+  opacity: 0;
   overflow: hidden;
   list-style: none;
   padding: 0;
-  transition: height 0.3s linear;
+  transition: all 0.4s linear;
 }
 .admin-left > .nav > ul > li > .second-nav > li {
-  padding-top: 8px;
+  padding: 4px 0;
 }
 .admin-left > .nav > ul > li > .second-nav > li > a {
   color: white;
@@ -112,14 +132,15 @@ body {
   display: table-cell;
   vertical-align: middle;
 }
-.admin-right > .right-top > .icons > i {
+.admin-right > .right-top > .icons > a {
   margin-left: 25px;
   color: #BBBBBB;
+  text-decoration: none;
   transform: scale(1.5);
   -webkit-transform: scale(1.5);
   -moz-transform: scale(1.5);
 }
-.admin-right > .right-top > .icons > i:hover {
+.admin-right > .right-top > .icons > a:hover {
   color: #01afec;
   cursor: pointer;
 }
@@ -134,6 +155,8 @@ body {
   border-bottom: 1px solid #e5e5e5;
   background-color: #FFFFFF;
   padding: 20px 40px 20px 140px;
+  transition: all 0.5s ease;
+  overflow: hidden;
 }
 .admin-right > .right-info > .brief-info {
   position: relative;
@@ -165,6 +188,20 @@ body {
 }
 .admin-right > .right-info > .brief-info > .stars > i {
   color: orange;
+}
+.admin-right > .right-info > .skill-show {
+  float: left;
+  min-width: 300px;
+  min-height: 100px;
+  padding: 0px 0 0 50px;
+}
+.admin-right > .right-info > .skill-show > h5 {
+  padding-left: 40px;
+}
+.admin-right > .right-info > .skill-show > ul {
+  list-style: none;
+  font-size: 12px;
+  color: #01afec;
 }
 .admin-right > .right-info > .operation {
   float: right;
@@ -273,15 +310,349 @@ body {
 .admin-right .resume-change > form > table tr > td > input[type="text"] {
   width: 200px;
 }
+.admin-right .resume-change > form > table .isshow {
+  color: red;
+}
 .admin-right .resume-change > form > input[type="submit"] {
   position: relative;
   left: 50%;
   margin-left: -16px;
+}
+.admin-right .base-change {
+  padding-top: 60px;
+  min-height: 200px;
+  width: 70%;
+}
+.admin-right .base-change > .row {
+  margin-bottom: 25px;
+}
+.admin-right .base-change > .row > .title {
+  font-weight: bold;
+}
+.admin-right .base-change > .row input[type="text"] {
+  width: 200px;
 }
 .admin-right .showResumeTitle > .resumeTitle {
   padding: 80px 200px;
 }
 .admin-right .showResumeTitle > .resumeTitle > .btn-group {
   margin-right: 100px;
+}
+.admin-right .worksType {
+  padding: 40px;
+  min-height: 300px;
+}
+.admin-right .worksType:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.admin-right .worksType > .typeAdd {
+  float: left;
+  width: 25%;
+  min-height: 200px;
+  border: 1px solid #707070;
+  background-color: white;
+}
+.admin-right .worksType > .typeAdd > h4 {
+  background-color: #707070;
+  color: white;
+  padding: 10px 0 10px 15px;
+  margin: 0;
+}
+.admin-right .worksType > .typeAdd > form {
+  padding: 10px;
+}
+.admin-right .worksType > .typeAdd > form > div {
+  margin: 16px 0;
+}
+.admin-right .worksType > .typeChange {
+  float: right;
+  width: 74%;
+  min-height: 200px;
+  border: 1px solid #707070;
+}
+.admin-right .worksType > .typeChange:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.admin-right .worksType > .typeChange > h4 {
+  background-color: #707070;
+  color: white;
+  padding: 10px 0 10px 15px;
+  margin: 0;
+}
+.admin-right .worksType > .typeChange > div {
+  margin-top: 25px;
+}
+.admin-right .worksType > .typeChange > div > .typeItems {
+  height: 200px;
+  margin-bottom: 20px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.admin-right .worksType > .typeChange > div > .typeItems > span {
+  font-weight: 600;
+}
+.admin-right .worksType > .typeChange > div > .typeItems > button {
+  margin-right: 20px;
+}
+.admin-right .worksType > .typeChange > div > .typeItems > .typeModify {
+  width: 90%;
+  position: absolute;
+  margin: 0 auto;
+  background-color: white;
+  height: 200px;
+  transition: all 0.5s ease;
+  box-shadow: 2px 2px 4px #707070;
+  top: 200px;
+  padding: 8px 0 5px 10px;
+}
+.admin-right .worksType > .typeChange > div > .typeItems > .typeModify > h5 {
+  font-weight: 700;
+}
+.admin-right .works-upload {
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+.admin-right .works-upload > form > .input-group {
+  margin-bottom: 20px;
+}
+.admin-right .works-upload > form label {
+  width: 130px;
+}
+.admin-right .works-upload > form input[type="text"] {
+  width: 220px;
+}
+.admin-right .works-upload > form input[type="submit"] {
+  margin-left: 200px;
+}
+.admin-right .work-show {
+  width: 90%;
+  min-height: 400px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.admin-right .work-show > .sameType:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.admin-right .work-show > .sameType > h4 {
+  background-color: #707070;
+  padding: 8px 0;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+.admin-right .work-show > .sameType > h4:hover {
+  cursor: pointer;
+}
+.admin-right .work-show > .sameType > .workItems {
+  display: none;
+  width: 100%;
+}
+.admin-right .work-show > .sameType > .workItems > .works {
+  padding: 15px;
+  width: 50%;
+  float: left;
+}
+.admin-right .work-show > .sameType > .workItems > .works > div {
+  height: 300px;
+  padding: 10px;
+  position: relative;
+  background-color: white;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.admin-right .work-show > .sameType > .workItems > .works > div:hover {
+  box-shadow: 2px 2px 4px #707070;
+  transform: translateX(-2px);
+  transform: translateY(-2px);
+  z-index: 10;
+}
+.admin-right .work-show > .sameType > .workItems > .works > div:hover > .work-brief {
+  top: 0px;
+}
+.admin-right .work-show > .sameType > .workItems > .works > div > .imgBox {
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.admin-right .work-show > .sameType > .workItems > .works > div > .imgBox > img {
+  height: 100%;
+}
+.admin-right .work-show > .sameType > .workItems > .works > div > .work-brief {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #707070;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 300px;
+  left: 0;
+  text-align: center;
+  padding-top: 80px;
+  transition: top 0.3 ease-in;
+}
+.admin-right .work-show > .sameType > .workItems > .works > div > .work-brief > h4 {
+  color: white;
+}
+.admin-right .work-show > .sameType > .workItems > .works > div > .work-brief > p {
+  color: #EEEEEE;
+}
+.admin-right .work-show > .sameType > .workItems > .works > div > .work-brief > a {
+  text-decoration: none;
+  color: white;
+  font-style: italic;
+}
+.admin-right .work-modify {
+  width: 90%;
+  min-height: 400px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.admin-right .work-modify > .sameType:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.admin-right .work-modify > .sameType > h4 {
+  background-color: #707070;
+  padding: 8px 0;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+.admin-right .work-modify > .sameType > h4:hover {
+  cursor: pointer;
+}
+.admin-right .work-modify > .sameType > .workItems {
+  display: none;
+  width: 100%;
+}
+.admin-right .work-modify > .sameType > .workItems > .works {
+  padding: 15px;
+  width: 33.3%;
+  float: left;
+}
+.admin-right .work-modify > .sameType > .workItems > .works > div {
+  height: 390px;
+  padding: 10px;
+  position: relative;
+  background-color: white;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.admin-right .work-modify > .sameType > .workItems > .works > div:hover {
+  box-shadow: 2px 2px 4px #707070;
+  transform: translateX(-2px);
+  transform: translateY(-2px);
+  z-index: 10;
+}
+.admin-right .work-modify > .sameType > .workItems > .works > div > .imgBox {
+  height: 200px;
+  overflow: hidden;
+  text-align: center;
+}
+.admin-right .work-modify > .sameType > .workItems > .works > div > .imgBox > img {
+  height: 100%;
+}
+.admin-right .work-modify > .sameType > .workItems > .works > div > h4 > span {
+  font-size: 14px;
+  font-style: italic;
+}
+.admin-right .work-modify > .sameType > .workItems > .works > div > .modify {
+  position: absolute;
+  top: 390px;
+  left: 0;
+  height: inherit;
+  background-color: white;
+  width: 100%;
+  transition: all 0.3s ease-in;
+  padding: 15px 12px;
+}
+.admin-right .work-modify > .sameType > .workItems > .works > div > .modify > .input-group {
+  margin-bottom: 8px;
+}
+.admin-right .work-modify > .sameType > .workItems > .works > div > .modify > .input-group > input[type="text"] {
+  width: 230px;
+}
+.admin-right .order {
+  width: 90%;
+  min-height: 400px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+.admin-right .order > table {
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid #aaa;
+}
+.admin-right .order > table tr {
+  height: 30px;
+}
+.admin-right .order > table tr > td {
+  font-size: 12px;
+}
+.admin-right .order > table tr:nth-child(even) {
+  background-color: white;
+}
+.admin-right .order > table tr:nth-child(1) {
+  width: 80px;
+  background-color: #707070;
+  color: white;
+}
+.admin-right .order > table tr:nth-child(1) > th {
+  width: 80px;
+  padding: 10px 0;
+  font-size: 16px;
+  text-align: center;
+}
+.admin-right .order > table tr:nth-child(1) > .ordertime {
+  width: 160px;
+}
+.admin-right .orderDetail {
+  width: 90%;
+  min-height: 400px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+.admin-right .orderDetail > .orderTable {
+  padding: 0 50px;
+  margin-bottom: 40px;
+}
+.admin-right .orderDetail > .orderTable > h4 {
+  background-color: #558fc5;
+  padding: 8px 0 8px 10px;
+  color: white;
+  margin: 0;
+}
+.admin-right .orderDetail > .orderTable > table {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+.admin-right .orderDetail > .orderTable > table > tbody > tr > th {
+  text-align: center;
+  padding: 8px 0;
+}
+.admin-right .orderDetail > .orderTable > table > tbody > tr > td {
+  padding: 5px 0;
+}
+.admin-right .orderDetail > #orderInfo .title {
+  width: 120px;
+  text-align: right;
+  font-weight: bold;
 }
 /*# sourceMappingURL=admin.css.map */

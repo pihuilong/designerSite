@@ -1,0 +1,139 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  background-color: #dadbdb;
+}
+.works-container {
+  padding-top: 1px;
+  min-height: 600px;
+}
+.works-container .sidebar-offcanvas > ul {
+  min-height: 300px;
+}
+.works-container .sidebar-offcanvas > ul > .typeMenu:hover {
+  cursor: pointer;
+  background-color: #323b43;
+  color: white;
+}
+.works-container .content {
+  position: relative;
+}
+.works-container .content .content-row {
+  min-height: 500px;
+  position: relative;
+}
+.works-container .content .content-row > ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+.works-container .content .content-row > ul > li {
+  width: 32%;
+  margin: 0.6%;
+  float: left;
+  background-color: #dadbdb;
+}
+.works-container .content .content-row > ul > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.works-container .content .content-row > ul > li > a:hover > div {
+  opacity: 1;
+}
+.works-container .content .content-row > ul > li > a > img {
+  width: 100%;
+}
+.works-container .content .content-row > ul > li > a > div {
+  position: absolute;
+  text-align: center;
+  padding-top: 50px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.works-container .content .content-row > ul > .service-item {
+  width: 32%;
+  min-height: 350px;
+  margin: 0.6%;
+  float: left;
+  background-color: white;
+  border: 1px solid #dadbdb;
+  padding: 0.5%;
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.works-container .content .content-row > ul > .service-item:hover {
+  box-shadow: 2px 2px 4px rgba(100, 100, 100, 0.6);
+  transform: translateX(2px);
+  transform: translateY(-2px);
+}
+.works-container .content .content-row > ul > .service-item > img {
+  width: 100%;
+  margin-bottom: 18px;
+}
+.works-container .content .content-row > ul > .service-item > .service-desc {
+  padding-top: 5px;
+  transition: all 0.3s ease;
+}
+.works-container .content .content-row > ul > .service-item > .service-desc > h5 {
+  margin: 8px 0;
+}
+.works-container .content .content-row > ul > .service-item > .service-desc span {
+  color: red;
+  font-weight: bold;
+}
+.works-container .content .content-row > ul > .service-item > .service-desc > button {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.works-container .content .content-row > ul > .service-item > .order-info-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+  background-color: white;
+}
+.works-container .content .content-row > ul > .service-item > .order-info-box > .order-info {
+  width: 100%;
+  margin-top: 16%;
+  position: relative;
+  padding-left: 8px;
+}
+.works-container .content .content-row > ul > .service-item > .order-info-box > .order-info .input-group {
+  width: 100%;
+  margin-bottom: 18px;
+}
+.works-container .content .content-row > ul > .service-item > .order-info-box > .order-info .input-group > input {
+  width: 80%;
+}
+.works-container .content .content-row > ul > .service-item > .order-info-box > .order-info .input-group > textarea {
+  width: 90%;
+}
+.works-container .content .content-row > ul > .service-item > .order-info-box > .order-info > .fa-close {
+  position: absolute;
+  right: 12px;
+  top: -30px;
+  font-size: 20px;
+}
+.copy-right {
+  background-color: #323b43;
+  padding: 17px 0;
+}
+.copy-right p {
+  text-align: center;
+  margin: 0 0 0px 0;
+  font-size: 14px;
+  color: #dadbdb;
+  font-weight: 600;
+}
+/*# sourceMappingURL=works.css.map */

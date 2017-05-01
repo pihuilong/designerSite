@@ -1,0 +1,21 @@
+<% if(services.length == 0){ %>
+	<h3 style="color: red;text-align: center;">该分类还没有添加服务哟！</h3>
+<%}%>
+<% services.map(function(work){ %>
+	<div class="works">
+		<div>
+			<div class="imgBox" data-workimg = "<%=work.serviceLogo%>">
+				<img src="/uploads/service/<%=work.serviceLogo%>"/>
+			</div>
+			<div class="work-brief">
+				<h4>
+					<%=work.serviceTitle%>
+				</h4>
+				<p><%=work.serviceDescription%></p>
+				<label style="color: white;">参考价格：</label><span style="font-weight: bold;color: red;">&yen;<%=work.servicePrice%></span> <br /><br />
+			</div>
+		</div>
+			
+	</div>
+<%})%>
+	

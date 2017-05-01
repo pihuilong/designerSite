@@ -1,12 +1,39 @@
 ~function(){
     $.fn.extend({
-        isEmpty : function(){
+        isEmpty : function(){   //不为空且不含空格
             var noEmpty = /^\S+$/;
             return noEmpty.test(this.val());
         },
         isEmail : function(){
             var email = /^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/;
             return email.test(this.val());
+        },
+        isNolong : function(){   //不能超过16个字符，支持中英文、数字、减号或下划线
+        	var nolong = /^[\\u4e00-\\u9fa5_a-zA-Z0-9-]{1,16}$/;
+        	return nolong.test(this.val());
+        },
+        isPwd : function(){
+        	var Pwd = /^([A-Z]|[a-z]|[0-9]|[`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]){6,20}$/;
+        	return Pwd.test(this.val());
+        },
+        fileSize : function(size){  //文件大小不超过size值返回true  单位：KB
+        	var fileSize = 0;
+		    var isIE = /msie/i.test(navigator.userAgent) && !window.opera;            
+		    if (isIE && !this.files) {          
+		         var filePath = this.value;            
+		         var fileSystem = new ActiveXObject("Scripting.FileSystemObject");   
+		         var file = fileSystem.GetFile (filePath);               
+		         fileSize = file.Size;         
+		    }else {  
+		         fileSize = this.get(0).files[0].size;     
+		    } 
+		    fileSize=Math.round(fileSize/1024*100)/100; //单位为KB
+		    if(fileSize>=size){
+//		        alert("照片最大尺寸为10KB，请重新上传!");
+		        return false;
+		    }else{
+		    	return true;
+		    }
         }
     });
     
@@ -101,3 +128,25 @@
     }
 }();
 
+//记住页面当前位置并存储
+rememberPos = function () { 
+	var scrollPos; 
+	if (typeof window.pageYOffset != 'undefined') { 
+		scrollPos = window.pageYOffset; 
+	} 
+	else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') { 
+		scrollPos = document.documentElement.scrollTop; 
+	} 
+	else if (typeof document.body != 'undefined') { 
+		scrollPos = document.body.scrollTop; 
+	} 
+	document.cookie = "scrollTop=" + scrollPos; //存储滚动条位置到cookies中 
+} 
+
+function checknum(obj){
+	if(/^\d+\.?\d{0,2}$/.test(obj.value)){
+    	obj.value = obj.value;
+    }else{
+   		obj.value = obj.value.substring(0,obj.value.length-1);
+   	}
+}

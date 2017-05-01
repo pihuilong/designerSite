@@ -1,0 +1,19 @@
+<div class="index-change">
+	<form action="/admin/indexchange" method="post">
+		<div class="form-group message"></div>
+		<div class="form-group">
+			<label for="aboutme" class="lbs">关于我：</label>
+			<textarea name="aboutme" rows="5" cols="80" id="aboutme" placeholder="我是谁&我为什么要从事..."><% if(index.aboutMe){ %><%=index.aboutMe%><% } %></textarea>
+		</div>
+		<div class="form-group">
+			<label for="myskills" class="lbs">我的经验：</label>
+			<textarea name="myskills" rows="5" cols="80" id="myskills" placeholder="我有什么经验..."><% if(index.experience){ %><%=index.experience%><% } %></textarea>
+		</div>
+		<div class="form-group">
+			<label for="mywills" class="lbs">我的愿景：</label>
+			<textarea name="mywills" rows="5" cols="80" id="mywills" placeholder="我有什么愿景..."><% if(index.willing){ %><%=index.willing%><% } %></textarea>
+		</div>
+		
+		<input type="submit" value="提交"/>
+	</form>
+</div>

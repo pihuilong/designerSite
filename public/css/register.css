@@ -1,0 +1,40 @@
+body {
+  background: linear-gradient(to right, #558fc5, #b3c7db);
+  background-color: #558fc5;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+#customer_register {
+  background: linear-gradient(to right, grey, #ccc);
+  background-color: grey;
+}
+.register-box {
+  width: 40%;
+  margin: 80px auto;
+  padding: 1px;
+  box-shadow: 0 0 30px white;
+}
+.formbody {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  transition: height 0.5 ease;
+}
+.formbody > h4 {
+  background-color: #558fc5;
+  padding: 10px 0;
+  color: white;
+  margin-bottom: 25px;
+}
+.formbody > form {
+  padding: 0 20px;
+}
+.formbody > form > .input-group {
+  margin-bottom: 18px;
+}
+.formbody > form input[type="submit"] {
+  margin-bottom: 10px;
+}
+.formbody > form > .message {
+  height: 58px;
+}
+/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,67 @@
+<div class="orderDetail">
+	<div id="serviceInfo" class="orderTable">
+		<h4>服务属性</h4>
+		<table border="1px" bordercolor="#aaa">
+			<tr>
+				<th>服务</th>
+				<th>服务描述</th>
+				<th>服务单价</th>
+				<th>数量</th>
+				<th>参考总价</th>
+			</tr>
+			<tr>
+				<td><%= detail.serviceTitle %></td>
+				<td><%= detail.serviceDescription %></td>
+				<td>&yen;<%= detail.servicePrice %></td>
+				<td><%= detail.amount %></td>
+				<td style="color: red;">&yen;<%= detail.totalPrice %></td>
+			</tr>
+		</table>
+	</div>
+	<div id="orderInfo" class="orderTable">
+		<h4>订单信息</h4>
+		<table border="1px" bordercolor="#aaa">
+			<tr>
+				<td class="title">客户：</td>
+				<td class="data"><%= detail.customerName %></td>
+				<td class="title">客户性别：</td>
+				<td class="data"><%= detail.sex %></td>
+			</tr>
+			<tr>
+				<td class="title">客户Email：</td>
+				<td class="data"><%= detail.email %></td>
+				<td class="title">客户电话：</td>
+				<td class="data"><%= detail.tel %></td>
+			</tr>
+			<tr>
+				<td class="title">订单状态：</td>
+				<td class="data" style="color: red;">
+					<% if(detail.orderStatus == "0"){ %>
+						处理中
+					<% }else if(detail.orderStatus == "1"){ %>
+						已完成
+					<% }else{ %>
+						已取消
+					<% } %>
+				</td>
+				<td class="title">下单时间：</td>
+				<td class="data"><%= detail.orderTime %></td>
+			</tr>
+			<tr>
+				<td class="title">用户描述：</td>
+				<td class="data" colspan="3"><%= detail.orderDescription %></td>
+			</tr>
+		</table>
+	</div>
+	<% if(detail.orderStatus == "0"){ %>
+		<div class="orderTable" style="text-align: center;padding-top: 20px;">
+			<select name="status" class="btn btn-default">
+				<option value="0">处理中</option>
+				<option value="1">完成</option>
+				<option value="-1">取消</option>
+			</select><br /><br />
+			<button class="btn btn-info refresh" data-orderid = "<%= detail.orderID %>">更新订单状态</button>
+			<div class="msg-box"></div>
+		</div>
+	<% } %>
+</div>

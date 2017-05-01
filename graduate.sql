@@ -11,9 +11,10 @@ use designerSite;
     primary key(adminID)
 ); 
 alter table admin add email varchar(100) not null;*/  /*添加email字段用于登录*/
+/*alter table admin add portrait varchar(100);  添加用户形象
 /*insert into admin values(default,"hiram","hiram1994",1,"pihuilong@qq.com");*/
 /*insert into admin values(default,"BonnieLee","bonnie1993",1,"1770232364@qq.com");
-
+alter table admin modify isSuper char(1);*/
 
 /*创建主页关于我*/
 /* create table indexAboutMe(
@@ -30,7 +31,7 @@ on update cascade;   /*主表更新，字表们产生连锁更新动作*/
 
 /*创建主页技能表*/
 /* create table indexSkill(
-	skillID int primary key,
+	skillID int primary key auto_increment,
 	adminID int not null,
     skill longtext null
 );
@@ -63,7 +64,8 @@ on update cascade;   /*主表更新，字表们产生连锁更新动作*/
     workImg varchar(100) null,
     workHyperLink varchar(100) null,
     showIndex bit not null
-);
+);*/
+/*alter table works modify showIndex char(1);
 /*定义外键以及级联操作*/
 /* alter table works add constraint fk_work_type_ID
 foreign key (typeID)
@@ -148,27 +150,12 @@ on update cascade;   /*主表更新，字表们产生连锁更新动作*/
     servicePrice numeric(8,2) not null,
     showIndex bit not null,
     serviceLogo varchar(100) null
-);
+);*/
+/*alter table service modify showIndex char(1);
 /*定义外键以及级联操作*/
 /* alter table service add constraint fk_service_type_ID
 foreign key (typeID)
 references servicetype(typeID)
-on update cascade;   /*主表更新，字表们产生连锁更新动作*/
-
-/*创建管理员订单表*/
-/* create table adminOrder(
-	adminOrderID int primary key auto_increment,
-    adminID int not null,
-    orderID int not null
-);
-/*定义外键以及级联操作*/
-/* alter table adminOrder add constraint fk_order_admin_ID
-foreign key (adminID)
-references admin(adminID)
-on update cascade;   /*主表更新，字表们产生连锁更新动作*/
-/* alter table adminOrder add constraint fk_customer_order_ID
-foreign key (orderID)
-references customerorder(orderID)
 on update cascade;   /*主表更新，字表们产生连锁更新动作*/
 
 
@@ -184,38 +171,37 @@ on update cascade;   /*主表更新，字表们产生连锁更新动作*/
     photo varchar(100) null,
     vip bit not null
 );
+alter table customers modify vip char(1);
+alter table customers add adminID int not null;
+alter table customers drop column adminID;*/
 
-/*创建客户订单表*/
-/* create table customerOrder(
+/*创建订单表*/
+/* create table orders(
 	orderID int primary key auto_increment,
     customerID int not null,
+    adminID int not null,
+    serviceID int not null,
+    amount int null,
     orderTime datetime not null,
     orderStatus tinyint not null,
     orderDescription longtext null
 );
 /*定义外键以及级联操作*/
-/* alter table customerOrder add constraint fk_customer_ID
+/* alter table orders add constraint fk_customer_ID
 foreign key (customerID)
 references customers(customerID)
 on update cascade;   /*主表更新，字表们产生连锁更新动作*/
-
-/*创建客户订单详情表*/
-/* create table customerOrderItem(
-	orderID int ,
-    serviceID int ,
-    amount int not null,
-    primary key(orderID,serviceID)
-);
-
-/*定义外键以及级联操作*/
-/* alter table customerOrderItem add constraint fk_order_ID
-foreign key (orderID)
-references customerorder(orderID)
+/* alter table orders add constraint fk_order_admin_ID
+foreign key (adminID)
+references admin(adminID)
 on update cascade;   /*主表更新，字表们产生连锁更新动作*/
-/* alter table customerOrderItem add constraint fk_service_ID
+/* alter table orders add constraint fk_service_ID
 foreign key (serviceID)
 references service(serviceID)
 on update cascade;   /*主表更新，字表们产生连锁更新动作*/
+
+
+
 
 
 

@@ -1,0 +1,15 @@
+<div class="work-show">
+	<% if(types.length==0){ %>
+		<h3 style="color: red;text-align: center;">还没有添加作品分类哦！</h3>
+	<%}%>
+	<% types.map(function(type){ %> 
+		<div class="sameType">
+			<h4 class="typeName" data-typeid = "<%= type.typeID %>">
+				<img src="/uploads/service/<%= type.typeImg %>" style="width: 16px;"/>&nbsp;&nbsp;
+				<%= type.typeName %>
+			</h4>
+			<div class="workItems">
+			</div>
+		</div>
+	<% }) %>
+</div>

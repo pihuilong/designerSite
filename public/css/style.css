@@ -48,7 +48,11 @@ ul {
 	padding: 10px 50px;
 	background: #323b43;	
 }
-.topnav a{
+.topnav > span {
+	color: white;
+	font-style: italic;
+}
+.topnav > a{
 	float: right;
 	text-decoration: none;
 	font-size: 16px;
@@ -102,7 +106,7 @@ ul {
 }
 
 .nav-left a {
-	font-size: 8em;
+	font-size: 7em;
 	font-weight: 600;
 	color: #bfc1c2;
 	text-transform: uppercase;
@@ -254,6 +258,7 @@ div#portfolio {
 	display: block;
 	position: relative;
 	width: 100%;
+	height: 240px;
 }
 
 .da-thumbs li a {
@@ -299,7 +304,6 @@ ul#da-thumbs {
 /* Kumya */
 
 .link--kumya {
-	/*font-size: 6.5rem;*/
 	overflow: hidden;
 	line-height: 1;
 	color: #4eacff;
@@ -845,7 +849,7 @@ ul#da-thumbs {
 
 @media (max-width: 1024px) {
 	.nav-left a {
-		font-size: 8em;
+		font-size: 6em;
 	}
 	.nav-right ul li a {
 		font-size: 15px;
@@ -944,6 +948,17 @@ ul#da-thumbs {
 		margin: 25px 0 0 0;
 		font-size: 19px;
 	}
+	.banner-image {
+		/*float: left;*/
+		/*width: 70%;*/
+	}
+	.banner-image img {
+		width: 65%;
+	}
+	.da-thumbs li a,
+	.da-thumbs li a img{
+		height: 220px;
+	}
 }
 
 @media (max-width: 800px) {
@@ -962,7 +977,7 @@ ul#da-thumbs {
 		margin-top: 35px;
 	}
 	.nav-left a {
-		font-size: 7em;
+		font-size: 5em;
 	}
 	.nav-right ul li a {
 		font-size: 14px;
@@ -1117,6 +1132,10 @@ ul#da-thumbs {
 	}
 	.copy-right p {
 		font-size: 13px;
+	}
+	.da-thumbs li a,
+	.da-thumbs li a img{
+		height: 200px;
 	}
 }
 
@@ -1292,11 +1311,15 @@ ul#da-thumbs {
 		left: 1px;
 		font-size: 32px;
 	}
+	.da-thumbs li a,
+	.da-thumbs li a img{
+		height: 180px;
+	}
 }
 
 @media (max-width: 640px) {
 	.nav-left a {
-		font-size: 5em;
+		font-size: 3em;
 	}
 	.navigation {
 		padding-top: 0;
@@ -1411,6 +1434,10 @@ ul#da-thumbs {
 	#contact .map{
 		display: none;
 	}
+	.da-thumbs li a,
+	.da-thumbs li a img{
+		height: 160px;
+	}
 }
 
 @media (max-width: 480px) {
@@ -1484,7 +1511,7 @@ ul#da-thumbs {
 		padding: 0 10px;
 	}
 	.nav-left a {
-		font-size: 3.5em;
+		font-size: 2.5em;
 	}
 	.nav-right ul {
 		margin: 10px 0 0 0;
@@ -1506,6 +1533,10 @@ ul#da-thumbs {
 	
 	#contact .map{
 		display: none;
+	}
+	.da-thumbs li a,
+	.da-thumbs li a img{
+		height: 140px;
 	}
 }
 
@@ -1564,7 +1595,7 @@ ul#da-thumbs {
 		margin-top: 20px;
 	}
 	.nav-left a {
-		font-size: 3em;
+		font-size: 2em;
 	}
 	.nav-left {
 		width: 29.2%;
@@ -1658,6 +1689,10 @@ ul#da-thumbs {
 	
 	#contact .map{
 		display: none;
+	}
+	.da-thumbs li a,
+	.da-thumbs li a img{
+		height: 100px;
 	}
 }
 

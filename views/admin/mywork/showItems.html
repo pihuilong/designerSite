@@ -1,0 +1,21 @@
+<% if(works.length == 0){ %>
+	<h3 style="color: red;text-align: center;">该分类还没有添加作品哟！</h3>
+<%}%>
+<% works.map(function(work){ %>
+	<div class="works">
+		<div>
+			<div class="imgBox" data-workimg = "<%=work.workImg%>">
+				<img src="/uploads/works/<%=work.workImg%>"/>
+			</div>
+			<div class="work-brief">
+				<h4>
+					<%=work.worksName%>
+				</h4>
+				<p><%=work.worksIntro%></p>
+				<a href="<%=work.workHyperLink%>"><%=work.workHyperLink%></a> <br /><br />
+			</div>
+		</div>
+			
+	</div>
+<%})%>
+	

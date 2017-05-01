@@ -1,0 +1,85 @@
+<div class="resume-show">
+	<!--<div class="resume-choose">
+		<select name="choose">
+			<option value="">简历一</option>
+		</select>
+		<span><strong>是否展示：</strong>是</span>
+	</div>-->
+	<div class="summary">
+		<img width="70" height="90" align="right" class="headerImg" alt="<%=main.userName%>" src="/uploads/admin/<%=main.userImg%>">
+		<h1><%=main.userName%></h1>
+		<% if(main.sex == "0"){ %>
+			女
+		<% }else{ %>
+			男
+		<% } %>
+		<span class="ver-line">|</span>
+		<%= main.birth.split("T")[0] %>
+		<span class="ver-line">|</span> 现居住于:<%=main.nativePlace%><br><%=main.workYear%>年工作经验<span class="ver-line">|</span> 
+		学历：
+		<% if(main.highestQualification == "1"){ %>
+			高中
+		<% }else if(main.highestQualification == "2"){ %>
+			中专
+		<% }else if(main.highestQualification == "3"){ %>
+			大专
+		<% }else if(main.highestQualification == "4"){ %>
+			本科
+		<% }else if(main.highestQualification == "5"){ %>
+			研究生
+		<% }else if(main.highestQualification == "6"){ %>
+			硕士
+		<% }else if(main.highestQualification == "7"){ %>
+			博士
+		<% } %>
+		<p><%=main.tel%></p>
+		<p>
+			E-mail：
+			<a href="mailto:<%=main.mailbox%>"><%=main.mailbox%></a>
+		</p>
+	</div>
+	<dl class="details">
+		<dt><h5>求职意向</h5></dt>
+		<dd class="job-summary">
+			<ul>
+				<li>
+					<strong>工作性质：</strong>
+					<% if(main.jobspecification == "1"){ %>
+						   兼职
+					<% }else{ %>
+						   全职
+					<% } %>
+				</li>
+				<li><strong>期望行业：</strong><%=main.promisingIndustry%></li>
+				<li><strong>工作地区：</strong><%=main.willSpot%></li>
+				<li>
+					<strong>工作状态：</strong>
+					<% if(main.workStatus == "1"){ %>
+						  已就业
+					<% }else{ %>
+						  求职中
+					<% } %>
+				</li>
+			</ul>
+		</dd>
+		<dt><h5>专业技能</h5></dt>
+		<dd>
+			<p style="width:574px; overflow:hidden;word-break: break-all; word-wrap:break-word;"><%=sub.specializeSkill%></p>
+		</dd>
+		<dt><h5>工作经历</h5></dt>
+		<dd>
+			<div class="work-experience">
+				<p><%=sub.workExperience%></p>
+			</div>
+		</dd>
+		<dt><h5>培训经历</h5></dt>
+		<dd>
+			<p><%=sub.trainingExperience%></p>
+		</dd>
+		<dt><h5>教育经历</h5></dt>
+		<dd>
+			<div class="education-background">
+				<p><%=sub.educationExperience%></p>
+		</dd>
+	</dl>
+</div>

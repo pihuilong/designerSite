@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>用户注册</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/css/register.css" />
+		<script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/checkstr.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body id="customer_register">
+		<div class="register-box container">
+			<!--body-->
+			<div class="formbody">
+				<h4 class="text-center">账号注册</h4>
+				<form action="" method="post" class="register-form">
+					<div class="input-group">
+						<span class="input-group-addon" id="sizing-addon2">* 姓名</span>
+						<input type="text" class="form-control" id="adminName" placeholder="请输入用户名(不超过16字符)" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon" id="sizing-addon2">* 邮箱</span>
+						<input type="text" class="form-control" id="email" placeholder="请输入用于登录账户的邮箱（xxx@xx.xx）" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon" id="sizing-addon2">* 密码</span>
+						<input type="password" class="form-control secret" id="secret1" placeholder="请输入登录密码(6-20位)" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon" id="sizing-addon2">* 确认密码</span>
+						<input type="password" class="form-control secret" id="secret2" placeholder="请确认登录密码" aria-describedby="sizing-addon2">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon" id="sizing-addon2">头像</span>
+						<input type="file" class="form-control" id="portrait" accept="image/x-png">
+					</div>
+					<div class="text-center" style="position: relative;">
+						<input type="submit" class="btn btn-primary" value=" 注册 " />&nbsp;&nbsp;
+						<a href="customer_login.html" style="font-style: italic;">已注册？</a>
+						<a href="javascript:;" style="position: absolute;color: grey;right: 0;top: 8px;" onclick="window.location.href=localStorage.getItem('designerSite')">
+							<i class="glyphicon glyphicon-home"></i>返回首页
+						</a>
+					</div>
+					<div class="message">
+					</div>
+				</form>
+			</div>
+			<!--body end-->
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				var $adminName = $("#adminName"),
+					$email = $("#email"),
+					$secrets1 = $("#secret1"),
+					$secrets2 = $("#secret2"),
+					$portrait = $("#portrait"),
+					$message = $(".message");
+				$("form").submit(function(){
+					var event = event || window.event;
+					event.preventDefault(); // 兼容标准浏览器
+					window.event.returnValue = false; // 兼容IE6~8
+					if(!$adminName.isEmpty()){
+						$message.error("警告","用户名不能为空且不能含有空格");
+						$adminName.focus();
+						return false;
+					}
+					if(!$adminName.isNolong()){
+						$message.error("警告","用户名不能超过十六字符");
+						$adminName.focus();
+						return false;
+					}
+					if(!$email.isEmail()){
+						$message.error("警告","邮箱格式错误");
+						$email.focus();
+						return false;
+					}
+					if(!$secrets1.isPwd()){
+						$message.error("警告","必须输入6-20位密码");
+						$secrets1.focus();
+						return false;
+					}
+					if($secrets1.val()!==$secrets2.val()){
+						$message.error("警告","请确保两次输入密码相同");
+						$secrets2.focus();
+						return false;
+					}
+					/*if($portrait.val()==""){
+						$message.error("警告","请选择一张靓照");
+						return false;
+					}*/
+					/*if(!$portrait.fileSize(1024)){
+						$message.error("警告","照片大小不能超过1MB");
+						return false;
+					}*/
+				
+					var data = new FormData();
+					data.append("userName",$adminName.val());
+					data.append("email",$email.val());
+					data.append("password",$secrets1.val());
+					data.append("head",$portrait.get(0).files[0]);
+					
+					$._ajax({
+						url : "/register/customer",
+						data : data,
+						dataType : "json",     //服务器响应的数据类型
+						processData : false,   //不将data选项传递进来的对象处理成一个查询字符串
+						contentType : false,   //multipart/form-data一定要设为false,不要自己添加
+						cache : false ,         //不缓存此页面
+					}).then(function(obj){
+						if(obj.code == 1){
+							window.location.href = "customer_login.html";
+						}else if(obj.code == 2){
+							$message.error(null,"用户名已存在！");
+							$adminName.focus();
+						}else if(obj.code == 3){
+							$message.error(null,"该邮箱已被注册！");
+							$email.focus();
+						}else{
+							$message.error(null,"操作失败,请稍后重试!");
+						}
+					});
+				});
+			})
+		</script>
+	</body>
+</html>

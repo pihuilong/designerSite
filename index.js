@@ -6,11 +6,20 @@ global.fs = Promise.promisifyAll(require("fs"));
 global.rootpath = __dirname;
 global.util = require('./utils.js');
 global.adminModel = require('./model/admin_model.js');
+global.customerModel = require('./model/customer_model.js');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var ejs = require('ejs'); //使用ejs渲染页面
 
 var app = express();
+
+//https服务器 暂时不用
+// var https = require('https');
+// var privateKey = fs.readFileSync('privatekey.pem', 'utf8');
+// var certificate = fs.readFileSync('certificate.pem', 'utf8');
+// var credentials = { key: privateKey, cert: certificate };
+// var httpsServer = https.createServer(credentials, app);
+
 
 // 配置post req.body解析中间件
 app.use(bodyParser.json()); // for parsing application/json
@@ -32,10 +41,19 @@ app.use(session({
 // 配置静态目录
 app.use(express.static('public'));
 
-// 挂载路由表
-app.use("/login", require('./router/loginRouter.js'));
-app.use("/admin", util.checklogin, require('./router/adminRouter.js'));
+//首页
+app.get("/", (req, res) => {
+    adminModel.admin_SEL_All().then((results) => {
+        res.render('index.html', { admins: results });
+    }).catch((err) => { util.errorHandle(err) });
+});
 
+// 挂载路由表
+app.use("/home", require('./router/homeRouter.js')); //设计师主页路由表
+app.use("/login", require('./router/loginRouter.js')); //登录路由表
+app.use("/register", require('./router/registerRouter.js')); //注册路由表
+app.use("/admin", util.checklogin, require('./router/adminRouter.js')); //设计师后台路由表
+app.use("/customer", util.checkloginCustomer, require('./router/customerRouter.js'));
 
 
 

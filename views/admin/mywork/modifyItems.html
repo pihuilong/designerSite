@@ -1,0 +1,53 @@
+<% if(works.length == 0){ %>
+	<h3 style="color: red;text-align: center;">该分类还没有添加作品哟！</h3>
+<%}%>
+<% works.map(function(work){ %>
+	<div class="works">
+		<div>
+			<div class="imgBox" data-workimg = "<%=work.workImg%>">
+				<img src="/uploads/works/<%=work.workImg%>"/>
+			</div>
+			<h4>
+				<%=work.worksName%> &nbsp;&nbsp;
+				<% if(work.showIndex=="1"){ %>
+					<span>在首页展示</span>
+				<%}else{%>
+					<span>不在首页展示</span>
+				<%}%>
+			</h4>
+			<p><%=work.worksIntro%></p>
+			<a style="color: blue;" href="<%=work.workHyperLink%>"><%=work.workHyperLink%></a> <br /><br />
+			<button class="btn btn-primary btn-modify">修改</button> &nbsp;&nbsp;&nbsp;
+			<button class="btn btn-danger btn-delete" data-workid = "<%=work.worksID%>">删除</button>
+			
+			<div class="modify">
+				<div class="input-group">
+					<label for="workName">* 作品名称</label><br />
+					<input type="text" name="workName" class="workName" value="<%=work.worksName%>" placeholder="必须输入作品名" />
+				</div>
+				
+				<div class="input-group">
+					<label for="workDesc">作品介绍</label><br />
+					<textarea name="workDesc" class="workDesc" rows="3" cols="30" style="vertical-align: top;" placeholder="请输入作品介绍"><%=work.worksIntro%></textarea>
+				</div>
+				
+				<div class="input-group">
+					<label for="workLink">作品链接</label><br />
+					<input type="text" name="workLink" class="workLink" value="<%=work.workHyperLink%>" placeholder="请输入作品链接（若有）" />
+				</div>
+				
+				<div class="input-group">
+					<label for="">在首页展示(9张)</label>&nbsp;&nbsp;&nbsp;	
+					<input type="radio" name="showIndex" value="1"  checked="checked" />是 &nbsp;&nbsp;
+					<input type="radio" name="showIndex" value="0" />否
+				</div>
+				<div class="message" style="height: 80px;"></div>
+				
+				<input type="submit" class="btn btn-primary submit" value="提交" data-workid = "<%=work.worksID%>"/> &nbsp;&nbsp;&nbsp;
+				<button class="btn btn-danger cancelModify">取消</button>
+			</div>
+		</div>
+			
+	</div>
+<%})%>
+	
