@@ -10,8 +10,8 @@ exports.getConn = () => {
         connectionLimit: 10,
         host: '127.0.0.1',
         user: 'root',
-        password: '',
-        database: 'designersite'
+        password: 'hiram',
+        database: 'designerSite'
     });
     return pool.getConnectionAsync().disposer(function(connection) {
         try {
